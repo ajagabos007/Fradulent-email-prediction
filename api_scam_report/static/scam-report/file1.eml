@@ -1,0 +1,2784 @@
+Delivered-To: dealrebels@gmail.com
+Received: by 2002:a05:7022:658c:b0:48:2460:a57b with SMTP id bd12csp895385dlb;
+        Thu, 12 Jan 2023 15:48:04 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtvmWCKGMvwFmIBnw8MWscLTjTxGgQgZZHbK3tKggMDs0wvliX1E3g1MN+UCxO6y3kr9R9R
+X-Received: by 2002:a05:6e02:1308:b0:30c:2b07:547c with SMTP id g8-20020a056e02130800b0030c2b07547cmr34510870ilr.26.1673567284427;
+        Thu, 12 Jan 2023 15:48:04 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673567284; cv=none;
+        d=google.com; s=arc-20160816;
+        b=z9SgsbSAW0+IH9TucXmi2KidgCPp6g51GfdzBRXSKiEw6+IsEuHayDpBBx/iydgUFv
+         5WlfvYIkDalua5K3Dnu3oUjwBD8dRE3v5sFJCpzFE3TRgf5vV7vATH61whIzJiWxRdxh
+         lAUQ3gPKuvr48a0u93D/F9s2HjDDenKF1eeD+TK5nXCw0rj5E908IdoyHNDf3OFpnoSq
+         WGvXm/OCsqoj4Fl4JozcNHYSOVJMhkULyfps7Oz8Ym+sDGfRUsqw1MFkv3Xaz+OJ7vCy
+         WsnoLRJ2uipP6uZeb1IKjw8gPW93g1XtCX282qWN056TopMebZEZVKxTVLQp+Lft1NMt
+         kFjw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:to:from:subject:reply-to:feedback-id:mime-version:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=cg/4FE8tlIph66+ZNIw+TrcPxDGW7SbMLbRfCHuVkQg=;
+        b=aO1iS9n9+h8yizqAUaXnPbie7l4Od+3qe5/6ZWjiXzC5dyEzzKkNXVYR24cXOMnzzf
+         MaJbSOvNoydH5+jlcptVYjJH8hj/SSMQm3VbwMBbImHxKZziIjd/aPXK6hxXAV4IDg+b
+         pZfUPhmfBo+FB51CbIDO1lFCWX/mqs+waN4eiAwWNQS53wyUGFI7Ci/5ecsVZtx8VntQ
+         isM1guqnLYdZ9c1/1BxyHt8e1KXj35SN/0AbE5LO0lho2c2/8Fwdj2qNRDFnWZvZmOpr
+         iRIqy3uEawVprK+wYxDz739gVMK7vDrth1DeeuX02nCQOyADSCRT6ihXUpA9gImvBsTd
+         JTVQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.mckinsey.com header.s=ep2 header.b=j9PxEmsw;
+       spf=pass (google.com: domain of bounce@email.mckinsey.com designates 142.54.244.228 as permitted sender) smtp.mailfrom=bounce@email.mckinsey.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=email.mckinsey.com
+Return-Path: <bounce@email.mckinsey.com>
+Received: from mta228b.pmx1.epsl1.com (mta228b.pmx1.epsl1.com. [142.54.244.228])
+        by mx.google.com with ESMTPS id a15-20020a92660f000000b00302c24b9b1esi13886123ilc.47.2023.01.12.15.48.04
+        for <dealrebels@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 12 Jan 2023 15:48:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce@email.mckinsey.com designates 142.54.244.228 as permitted sender) client-ip=142.54.244.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.mckinsey.com header.s=ep2 header.b=j9PxEmsw;
+       spf=pass (google.com: domain of bounce@email.mckinsey.com designates 142.54.244.228 as permitted sender) smtp.mailfrom=bounce@email.mckinsey.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=email.mckinsey.com
+Return-Path: <bounce@email.mckinsey.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=email.mckinsey.com;
+	s=ep2; t=1673567281;
+	bh=HwfJaGwdIjGW3Ac8Tz2+1okbnM44jH6DC+j0A32cGKc=;
+	h=MIME-Version:Subject:From:To:Date:Content-Type;
+	b=j9PxEmswmrI5vn5yjmb6wvMGM5n0Nk/icr5kqrxDIfOu3mlgrAaIu1B8V8+ncMN5l
+	 4myAcks0nCAL5c1R0JbyALh1EFHOzH19n/QQTwi+FwwCwjEWBMsSNPokbjobou5B/E
+	 3jAR3GIElL0kBXjXlWIsDfyelj0HMd0ZCptryAE5pOd4XDePNs6LYhyKZ0j9qXa4Qs
+	 fesUAf3HuNiV8T/wxKtQg1r/OWGd5UgwJeaAgWJnuyWoYfpBOiicITevjS59n/Mka9
+	 JG8EZkM9WN1qkRnR6TnxEl6j8nCmyhCf8tWzpO+zbiqdyjRvjKiWCgbvUS+NSBG8Wd
+	 oy5iDziKgYGNg==
+Received: from [10.233.84.202] ([10.233.84.202:48362])
+	by pc1udsmtn1n13 (envelope-from <bounce@email.mckinsey.com>)
+	(ecelerity 3.6.9.48312 r(Core:3.6.9.0)) with ECSTREAM
+	id C1/2B-26110-13C90C36; Thu, 12 Jan 2023 23:48:01 +0000
+List-Unsubscribe: <mailto:bounce-HP2v700000185a8621d0abd53bb6e96c660f0162@email.mckinsey.com?subject=list-unsubscribe>
+Message-ID: <HP2v700000185a8621d0abd53bb6e96c660f0162@email.mckinsey.com>
+MIME-Version: 1.0
+Feedback-ID: 04673f2e-deef-48f5-9fea-1bafba8f21e6:35e1ee1d-2112-4462-94ae-fec31727d5ea:email:epslh1
+X-NSS: 04673f2e-deef-48f5-9fea-1bafba8f21e6
+Reply-To: "donotreply@email.mckinsey.com"
+ <donotreply-HP2v700000185a8621d0abd53bb6e96c660f0162@email.mckinsey.com>
+Subject: Artificial intelligence in strategy
+From: McKinsey Daily Read  <publishing@email.mckinsey.com>
+To: dealrebels@gmail.com
+Date: Thu, 12 Jan 2023 23:48:01 +0000
+Content-Type: multipart/alternative;
+ boundary="-=Part.873fb2e.f59f2a83dcc6690d.185a862225d.53bf02d66c2891c9=-"
+
+---=Part.873fb2e.f59f2a83dcc6690d.185a862225d.53bf02d66c2891c9=-
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- XSS REPLACEMENTS START-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- XSS REPLACEMENTS END-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1=2E0 Transitional//EN" "http://w=
+ww=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd">
+<html xmlns=3D"http://www=2Ew3=2Eorg/1999/xhtml"
+xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" /=
+>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial scale=3D1=
+=2E0" />
+<meta name=3D"robots" content=3D"no index" />
+<meta name=3D"format-detection" content=3D"telephone=3Dno" />
+<meta name=3D"format-detection" content=3D"address=3Dno" />
+
+<!--[if !mso]><!-->
+
+
+<!--<![endif]-->
+
+<title>Harmony Internal - McKinsey</title>
+<style type=3D"text/css">
+=2EReadMsgBody {
+    width: 100%;
+}
+=2EExternalClass {
+    width: 100%;
+}
+=2EExternalClass, =2EExternalClass p, =2EExternalClass span, =2EExternalCl=
+ass font, =2EExternalClass td, =2EExternalClass div {
+    line-height: 100%;
+}
+body {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    margin: 0 auto !important;
+    padding: 0;
+    min-width: 100% !important;
+}
+td {
+    mso-line-height-rule: exactly;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+img {
+    margin: 0 !important;
+}
+/* Forces Outlook to honor line-height */
+div, p, a, li, td, span {
+    -webkit-text-size-adjust: none;
+}
+/* Hides preheader on Outlook */
+=2Eset_outlook_hidden {
+    display: none !important;
+}
+/* Overrides blue links */
+a[href^=3Dtel], #MessageViewBody a, a[x-apple-data-detectors], #body a, =
+=2Elink {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+/* Wraps bullet proof button */
+a=2Ebutton {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    display: block !important;
+    width: 100% !important;
+}
+[data-outlook-cycle] [x-apple-data-detectors-type=3D"calendar-event"] {
+    color: inherit !important;
+    -webkit-text-decoration-color: inherit !important;
+    text-decoration: none !important;
+}
+/*Stops Outlook iOS blue dates*/
+#body [x-apple-data-detectors=3Dtrue],
+a[x-apple-data-detectors=3Dtrue] {
+    color: inherit !important;
+    -webkit-text-decoration-color: inherit !important;
+    text-decoration: inherit !important;
+}
+/* Default superscript code */
+sup {
+    -webkit-text-size-adjust: none;
+    vertical-align: text-top =2E6em;
+    line-height: =2E6em;
+    font-size: 60%;
+}
+/* Default subscript code */
+sub {
+    -webkit-text-size-adjust: none;
+    vertical-align: text-bottom =2E9em;
+    line-height: =2E9em;
+    font-size: 60%;
+}
+=2Eyshortcuts a {
+    border-bottom: none !important;
+}
+/* Renders TH on yahoo */
+=2Eundoreset th {
+    padding: 1px !important;
+}
+/* Extra classes */
+=2Enowrap {
+    white-space: nowrap !important;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+
+/* STYLES FOR ROUNDED BORDER BUTTONS */
+@media screen and (max-device-width: 600px), screen and (max-width: 600px)=
+ {
+  =2Ewrapto100pc {
+      width: 100% !important;
+      height: auto !important;
+  }
+  =2Enomob_rounded {
+      display: none !important;
+      width: 0px !important;
+      height: 0px !important;
+  }
+}
+u + #body a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+u + #body =2Enomob_rounded {
+    display: none!important;
+    width: 0px!important;
+    height: 0px!important;
+}
+u + #body =2Egmailbutton {
+    width: 100% !important;
+}
+
+/* STYLES FOR RESPONSIVE */
+@media only screen and (max-width: 480px) {
+  /* SHOW ON RESPONSIVE */
+  =2Emobile_show {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      float: none !important;
+      max-height: none !important;
+      line-height: normal !important;
+      height: auto !important;
+  }
+  /* HIDE ON RESPONSIVE */
+  =2Enomob, =2Ehide {
+      display: none !important;
+  }
+  /* RESPONSIVE BACKGROUND IMAGE */
+  =2EbgAdjust {
+      background-position: top center;
+  }
+  =2Ehide_bgimage {
+      background-image: none !important;
+      height: auto !important;
+      width: 100% !important;
+  }
+  /* ALIGNS OBJECTS ON RESPONSIVE */
+  =2Ecenter {
+      text-align: center !important;
+  }
+  =2Eleft {
+      text-align: left !important;
+  }
+  =2Eright {
+      text-align: right !important;
+  }
+  /* ALIGN BLOCK ELEMENTS ON RESPONSIVE */
+  =2Emargin0 {
+      margin: 0 auto !important;
+  }
+  =2Emargin-left {
+      margin-right: auto;
+      margin-left: 0;
+  }
+  =2Emargin-right {
+      margin-right: 0;
+      margin-left: auto;
+  }
+  /* WRAP & RESIZE ON RESPONSIVE */
+  =2Ewrap {
+      width: 100% !important;
+      height: auto !important;
+      min-width: 100% !important;
+  }
+  =2Ewrap-existing-content {
+      height: auto !important;
+      display: block;
+  }
+  =2Eresize280 {
+      width: 280px !important;
+      height: auto !important;
+  }
+  /* SPLIT COLUMNS ON RESPONSIVE */
+  =2Ecolsplit {
+      width: 100% !important;
+      float: inherit !important;
+      display: block !important;
+      background-position: top center !important;
+  }
+  /* STACK IMAGE TOP OR BOTTOM ON RESPONSIVE */
+  th=2Etopstack {
+      display: table-header-group !important;
+  }
+  th=2Ebotstack {
+      display: table-footer-group !important;
+  }
+  /* Inlines objects on responsive */
+  =2Einline {
+      display: inline-block !important;
+  }
+  /* RESPONSIVE PADDING STYLES - 0 or 20 */
+  =2Epad0 {
+      padding: 0px !important;
+  }
+  =2Epad0t {
+      padding-top: 0px !important;
+  }
+  =2Epad0r {
+      padding-right: 0px !important;
+  }
+  =2Epad0b {
+      padding-bottom: 0px !important;
+  }
+  =2Epad0l {
+      padding-left: 0px !important;
+  }
+  =2Epad0rl {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+  }
+  =2Epad0tb {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+  }
+  =2Epad20 {
+      padding: 20px !important;
+  }
+  =2Epad20t {
+      padding-top: 20px !important;
+  }
+  =2Epad20r {
+      padding-right: 20px !important;
+  }
+  =2Epad20b {
+      padding-bottom: 20px !important;
+  }
+  =2Epad20l {
+      padding-left: 20px !important;
+  }
+  =2Epad20rl {
+      padding-right: 20px !important;
+      padding-left: 20px !important;
+  }
+  =2Epad20tb {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+  }
+}
+
+/* REMOVES RIGHT GUTTER IN GMAIL IOS APP */
+@media only screen and (min-device-width: 320px) and (max-device-width: 37=
+4px) {
+  /* iPhone 5 and 5S */
+  =2Eemail-container {
+      min-width: 320px !important;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 41=
+3px) {
+/* iPhone 6 and 6+ */
+  =2Eemail-container {
+      min-width: 375px !important;
+  }
+}
+
+/* STYLES FOR RESPONSIVE FONT SIZES */
+@media only screen and (max-width: 480px) {
+   =20
+
+    /* MCK-013: Script Mark + Share */
+    @media only screen and (max-width: 480px) {
+	=2Epad12b {
+	padding-bottom: 12px !important;
+	}
+	=2Einn_share {
+	transition: all 1=2E0s ease-in-out 0s;
+	-webkit-transition: all 1=2E0s ease-in-out 0s;
+	-o-transition: all 1=2E0s ease-in-out 0s;
+	margin-top: -220px;
+	padding: 0px 0px !important;
+	overflow: hidden !important;
+	}
+	#em_drop_share: checked + =2Einn_share {
+	margin-top: 0%;
+	}
+	=2Ehamburmenu_share {
+	position: relative !important;
+	width: 100% !important;
+	padding: 0px !important;
+	right: 0px !important;
+	top: 0px !important;
+	overflow: hidden !important;
+	transition: all 1=2E0s ease-in-out 0s;
+	-webkit-transition: all 1=2E0s ease-in-out 0s;
+	-o-transition: all 1=2E0s ease-in-out 0s;
+	height: auto !important;
+	}
+	#mobile-label_share {
+	background-color: #ffffff;
+	cursor: pointer;
+	display: block !important;
+	float: inherit;
+	padding: 12px 0px;
+	-webkit-tap-highlight-color: transparent;
+	width: auto;
+	margin: 0 auto !important;
+	}
+	}
+
+   =20
+
+    /*1-016: CTA */
+    @media only screen and (max-width: 480px) {
+    =2Emargin0 {margin: 0 auto!important;}
+    }
+
+   =20
+
+/* MCK-008: Footer | Logo + Social Icons */
+@media only screen and (max-width: 480px) {
+=2Epad15l {
+padding-left: 15px !important;
+}
+=2Epad16b {
+padding-bottom: 16px !important;
+}
+}
+
+td =2Emobile_h1, td =2Emobile_h1 span {
+    font-size: 40px !important;
+    line-height: 120% !important;
+    }
+    td =2Emobile_h2, td =2Emobile_h2 span {
+    font-size: 30px !important;
+    line-height: 120% !important;
+    }
+    td =2Emobile_h3, td =2Emobile_h3 span {
+    font-size: 24px !important;
+    line-height: 120% !important;
+    }
+    td =2Emobile_h4, td =2Emobile_h4 span {
+    font-size: 20px !important;
+    line-height: 120% !important;
+    }
+    td =2Emobile_p1, td =2Emobile_p1 span {
+    font-size: 16px !important;
+    line-height: 150% !important;
+    }
+    td =2Emobile_p2, td =2Emobile_p2 span {
+    font-size: 14px !important;
+    line-height: 150% !important;
+    }
+    td =2Emobile_p3, td =2Emobile_p3 span {
+    font-size: 12px !important;
+    line-height: 150% !important;
+    }
+    td =2Emobile_cta, td =2Emobile_cta span {
+    font-size: 16px !important;
+    line-height: 150% !important;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    [data-personalization_mapping] {
+    position: relative;
+}
+[data-personalization_mapping] =2Epersonalization-placeholder-value, [data=
+-personalization_mapping] =2Epersonalization-placeholder-value * {
+    color: inherit;
+    font-weight: inherit;
+    background-color: rgba(56, 240, 115, 0=2E14902);
+}
+[data-personalization_mapping] =2Epersonalization-script-value, [data-pers=
+onalization_mapping] =2Epersonalization-styling-el {
+    display: none;
+}
+[data-personalization_mapping] =2Epersonalization-tooltip-el {
+    display: none;
+    width: max-content;
+    position: absolute;
+    left: 10%;
+    top: 100%;
+    z-index: 10000;
+    padding: 8px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 8px 0 rgba(122, 133, 148, 0=2E3);
+}
+[data-personalization_mapping] =2Epersonalization-tooltip-el =2Epersonaliz=
+ation-tooltip-el-row {
+    font-size: 12px;
+    display: block;
+    padding-bottom: 8px;
+    clear: both;
+    line-height: 18px;
+}
+[data-personalization_mapping] =2Epersonalization-tooltip-el =2Epersonaliz=
+ation-tooltip-el-row =2Epersonalization-tooltip-label {
+    color: #7a8594;
+    display: inline;
+    float: left;
+    font-size: 12px !important;
+    line-height: 18px !important;
+}
+[data-personalization_mapping] =2Epersonalization-tooltip-el =2Epersonaliz=
+ation-tooltip-el-row =2Epersonalization-tooltip-friendly-name, [data-person=
+alization_mapping] =2Epersonalization-tooltip-el =2Epersonalization-tooltip=
+-el-row =2Epersonalization-tooltip-default-value {
+    font-weight: 600;
+    color: #333;
+    display: inline;
+    float: left;
+    font-size: 12px !important;
+    line-height: 18px !important;
+}
+[data-personalization_mapping]:hover =2Epersonalization-tooltip-el {
+    display: inherit;
+}
+}
+</style>
+<!--[if mso | ie]>
+<style>
+=2Esup {
+  vertical-align: 1px !important;
+  font-size: 100% !important;
+}
+</style>
+<![endif]-->
+
+<!--[if ie]>
+<style>
+  =2Esup {
+    vertical-align: 5px !important;
+    font-size: 77% !important;
+  }
+</style>
+<![endif]-->
+
+<!--[if gt mso 15]>
+<style type=3D"text/css" media=3D"all">
+  /* Outlook 2016 Height Fix */
+  table, tr, th, td {border-collapse: collapse;}
+  tr { font-size:0px; line-height:0px; border-collapse: collapse; }
+</style>
+<![endif]-->
+
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+
+</head>
+<body id=3D"body"  background=3D"" style=3D"margin:0 !important; padding:0=
+ !important; width: 100% !important; background-color: #f0f0f0; background-=
+size: auto; background-repeat: repeat; " class=3D"body">
+
+	<!--START -- Hidden Preheader -->
+		<!--[if !mso 9]><!-->
+		<div style=3D"display: none !important; font-size: 1px; color: #f0f0f0; =
+line-height: 1px; font-family: Arial,Helvetica,sans-serif; max-height: 0px;=
+ max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">Tune in&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;</div>
+		<!--<![endif]-->
+		<!--END -- Hidden Preheader -->
+
+   =20
+
+   <!--START -- Page Overflow Color Table -->
+<div style=3D"background-color: #f0f0f0;">
+
+<!--[if gte mso 9]>
+	<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+	<v:fill type=3D"tile" src=3D"" color=3D"#f0f0f0"/>
+	</v:background>
+	<![endif]-->
+
+    <table role=3D"presentation" height=3D"100%" width=3D"100%" cellpaddin=
+g=3D"0"  cellspacing=3D"0" border=3D"0" align=3D"center" class=3D"email-con=
+tainer">
+        <tr>
+            <td align=3D"left" background=3D"" style=3D"vertical-align: to=
+p; background-size: auto; background-repeat: repeat;" valign=3D"top">
+
+				<!--START -- Email Background Color Table  -->
+
+                <table role=3D"presentation" width=3D"640" border=3D"0" al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0"  class=3D"wrap">
+                    <tr>
+						<td align=3D"center" data-wrapper>
+
+					    	<!--START Email Size Wrapper Table -->
+
+                            <table role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wr=
+ap"><tbody><tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=
+=3D"640" border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+class=3D"wrap"><tbody><tr><td align=3D"center" style=3D"font-size:14px"><ta=
+ble role=3D"presentation" width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+  <tbody>
+    <tr>
+      <td border=3D"0" style=3D"display: block; margin: 0; padding: 0;">
+<img src=3D'https://email=2Emckinsey=2Ecom/O/v700000185a8621d0abd53bb6e96c=
+660f0/04673f2edeef48f500004c5a42963aa1' style=3D"display:none; max-height: =
+0px; font-size: 0px; overflow: hidden; mso-hide: all"/>      </td>
+    </tr>
+  </tbody>
+</table></td></tr><style data-ignore-inlining=3D"">@media (prefers-color-s=
+cheme: dark) { #_t::before {content:url('https://3ubw3aio=2Eemltrk=2Ecom/v2=
+/3ubw3aio?rd&i=3D13552232&t=3D2023-01-12e Daily Read');}} @media (prefers-c=
+olor-scheme: light) { #_t::before {content:url('https://3ubw3aio=2Eemltrk=
+=2Ecom/v2/3ubw3aio?rl&i=3D13552232&t=3D2023-01-12e Daily Read');}} @media p=
+rint{ #_t {background-image:url('https://3ubw3aio=2Eemltrk=2Ecom/v2/3ubw3ai=
+o?p&i=3D13552232&t=3D2023-01-12e Daily Read');}} div=2EOutlookMessageHeader=
+ {background-image:url('https://3ubw3aio=2Eemltrk=2Ecom/v2/3ubw3aio?f&i=3D1=
+3552232&t=3D2023-01-12e Daily Read')} table=2Emoz-email-headers-table {back=
+ground-image:url('https://3ubw3aio=2Eemltrk=2Ecom/v2/3ubw3aio?f&i=3D1355223=
+2&t=3D2023-01-12e Daily Read')} blockquote #_t {background-image:url('https=
+://3ubw3aio=2Eemltrk=2Ecom/v2/3ubw3aio?f&i=3D13552232&t=3D2023-01-12e Daily=
+ Read')} #MailContainerBody #_t {background-image:url('https://3ubw3aio=2Ee=
+mltrk=2Ecom/v2/3ubw3aio?f&i=3D13552232&t=3D2023-01-12e Daily Read')}</style=
+><div id=3D"_t"></div>
+<img src=3D"https://3ubw3aio=2Eemltrk=2Ecom/v2/3ubw3aio?i=3D13552232&t=3D2=
+023-01-12e Daily Read" width=3D"1" height=3D"1" border=3D"0" alt=3D""></tbo=
+dy></table></td></tr><tr><td><table role=3D"presentation" bgcolor=3D"#fffff=
+f" width=3D"640" border=3D"0" align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#ffffff"><!-- Start MCK-01=
+3: Script Mark + Share -->
+    <section id=3D"MCK013" layout-row=3D"true">
+      <style>	=09
+@media screen yahoo {
+=2Einn_share {
+margin-top: 0% !important;
+padding: 0px 0px !important;
+overflow: hidden !important;
+}
+		}
+</style>
+     =20
+      <div layout-row=3D"true">
+        <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff" class=3D=
+"wrap">
+          <tbody><tr layout-row=3D"true">
+            <td><table role=3D"presentation" align=3D"center" width=3D"100=
+%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                <tbody><tr>
+                  <td align=3D"center" style=3D"vertical-align: top; paddi=
+ng: 20px 20px 20px 20px; background-color: #ffffff;" bgcolor=3D"#ffffff" cl=
+ass=3D"pad20rl pad12b"><table role=3D"presentation" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                      <tbody><tr>
+                        <td align=3D"center" valign=3D"top"><table role=3D=
+"presentation" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0">
+                            <tbody><tr>
+                              <td align=3D"left" valign=3D"middle" style=
+=3D"vertical-align: middle; padding: 0px 0px 0px 0px; font-weight: normal;"=
+ width=3D"30%"><table role=3D"presentation" width=3D"100%" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0">
+                                  <tbody><tr>
+                                    <td align=3D"left" valign=3D"top" data=
+-groupid=3D"mck_logo"><a data-managed-link=3D"mck_logo_link_url" href=3D"ht=
+tp://email=2Emckinsey=2Ecom/homefeed?__hScId__=3Dv700000185a8621d0abd53bb6e=
+96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcc2&__hDId__=3D04673f2e-d=
+eef-48f5-9fea-1bafba8f21e6&__hSD__=3DbWNraW5zZXkuY29t&cid=3Dother-eml-dre-m=
+ip-mck&hlkid=3D351efef6ec624bbfaea07eb25276714d&hctky=3D13552232&hdpid=3D04=
+673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" style=3D"text-decorat=
+ion: none; outline: none" data-link-id=3D"58974fd1a3cc11ecacd1af24434af4e3"=
+><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3D3471f65a-13c6-4f67-af56-8135371fa1ba" width=3D"146" alt=3D"McKinsey &a=
+mp; Company" border=3D"0" style=3D"display: block; margin: 0; padding: 0;">=
+</a></td>
+                                  </tr>
+                                </tbody></table></td>
+                              <!--[if mso]><td width=3D"20" bgcolor=3D"#ff=
+ffff">&nbsp;</td><![endif]-->
+                              <td align=3D"right" valign=3D"middle" style=
+=3D"vertical-align: middle; padding: 0px 0px 0px 0px; font-weight: normal;"=
+><table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" class=3D"hide">
+                                  <tbody><tr>
+                                    <td align=3D"left" valign=3D"middle" s=
+tyle=3D"vertical-align: middle; text-align: left; padding: 0px 12px 0px 0px=
+; color: #000001;"><p style=3D"margin: 0; color: #000001; font-size: 14px; =
+font-family: Helvetica, Arial, sans-serif; line-height: 120% !important;"><=
+strong>Share this email</strong></p></td>
+                                    <!-- START Header - (Share) SOCIAL ICO=
+NS Module 2 -->
+                                    <td align=3D"left" valign=3D"middle" s=
+tyle=3D"padding: 0px 10px 0px 0px" data-groupid=3D"linked_logo"><a data-man=
+aged-link=3D"linked_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom/T=
+/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcc3/04673f=
+2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29u=
+jr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUC=
+CPvXMWoX_3eaFHlkq5FQ5xiZdwPHiF04RXIrNLojXqqmWF2vH_4xf4OMXDoGCxIUmDCWu1Igiso=
+k_dMGPKOzw62Hq6zpIzCE5TGvGGxNJ6Yjx2-xs6tvSSTSJkAMoC8v3Dvs5UwlUvCjxfDi7uA-Kp=
+OWcHfPirZvm9pgUiBd557Nvbgpp7azE0ApEOjaYxF9ppjk730r4Bs1-JAhjcpTP9UnLeZz5tezL=
+S9EDBAq1ZuLJrMTvES764fZcHAFlJ0ac7C7l1fJ1RJGFki5P2geTI5OSVrIm9Udluc8p32obfcJ=
+dCWO9e69NSuzIoF-32T9QqM-QYBuPW5qPDQETvieaw0H4vKAwdAbzM_3NQTmyN9jLryyOU2iANU=
+aRNdCqZxCgDifrW0DNHXWSRvUmEPl84E2Uw7hxnWZxA9UJ8INLAgeY0VT_yxKIjiqV8tM101T_K=
+o5bRtdOuIqjuxxaXb3gDnHmbZ1LHZKtnw_76i8V8q4i95xlyaSBiCn59TaOaHxi38qTo1e0pVR9=
+CH-JwwSGBU6ETMuX4JJO6fDa41XJIxRw3VZLM_Ip4t_sjpMUeglNHYb7BtfZ3YHChiCVQPXKOcM=
+zxpj7Kx5PVWrYLMjld2bo7MkiYUTda1TUHsK5rk" target=3D"_blank" style=3D"text-de=
+coration: none; outline: none; color: #000001" data-link-id=3D"58974fd2a3cc=
+11ecacd1af24434af4e3"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/C=
+ontentHandler/images?id=3D61db3abb-5906-44c8-a258-8ab3de689535" width=3D"32=
+" alt=3D"LinkedIn" border=3D"0" style=3D"display: block; margin: 0; padding=
+: 0;"></a></td>
+                                    <td align=3D"left" valign=3D"middle" s=
+tyle=3D"padding: 0px 10px 0px 0px" data-groupid=3D"twitter_logo"><a data-ma=
+naged-link=3D"twitter_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom=
+/T/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcc4/0467=
+3f2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq2=
+9ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgU=
+UCCPvXMWoX_1UpFqqls_3UuPcL1f8ypQuUgwrNenW5eK9FGRjUOxRU3mHu2wuuuQBG9XoJW521e=
+YTyU6b-kqXXqttWJznC-PG08E6es37mlkbhEEpNeDYa3Kus70-SZUaRr2lRjrkmIE8wOyb2Nuh5=
+H_nhtlFZK3pTsAY9yft30XUBxsjtje_R5v9fcf7wmIhSVHuklyh7UvAmTMwtsh4bcLthPEdPGn2=
+jF6qVlFViVntibuEzdp5YPWQbguv_OQqky53gvHIh-fkqnE2ewk2h5Npx62ahXhuZQ4wQ-YXqgH=
+dW2GE68791VZaB_vlRxinmtClNYeXdWZbtnx3z5-hj78etwjf7sQ6LUZN38uLEWEs7TXTkO9sAC=
+dLdz3DmlKKbzTBcvp7HARZ4TKllzSRroKDavBtCdOtvJz1YIXf_nX-6Y6yPU1q9ae8xt83RO7Qw=
+yn6RQNUYiregRLMYZi6Pz6FRxQDKUlIgPGbwyr85o7wfOi5W3MEAjxkJrDamOFK6aXMz3zO34gJ=
+Vy0GwYcumW-R_X-3D-F-TuYnTC-1zsA=3D" target=3D"_blank" style=3D"text-decorat=
+ion: none; outline: none; color: #000001" data-link-id=3D"58974fd3a3cc11eca=
+cd1af24434af4e3"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/Conten=
+tHandler/images?id=3D635dc295-1b62-47cc-b9ae-f84b32d8f240" width=3D"32" alt=
+=3D"Twitter" border=3D"0" style=3D"display: block; margin: 0; padding: 0;">=
+</a></td>
+                                    <td align=3D"left" valign=3D"middle" s=
+tyle=3D"padding: 0px 0px 0px 0px" data-groupid=3D"fb_logo"><a data-managed-=
+link=3D"fb_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom/T/v7000001=
+85a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcc5/04673f2e-deef-4=
+8f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6=
+bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_=
+3eaFHlkq5FQ73M5Cxo6SxlqO29dzdRia4ot8oldK_lonRJiJGB7N-rERzToHht2NwVM1b2XJsV7=
+XvKaf2jeScj701LCEk86ESLroJmoK5L9QMdqdsUN95Rw0k_t8Za1JC2QC9mcSjzoHnKpUpV1NFe=
+e1CIKDsHG6lY6AswtqUBj3WcbzY3xSyJQKEGV0xc5GQTyU6b-kqXXssA6IRkfRPlbeBtu7sjR1U=
+rrZ6A8sOcssRCu5P25VRL0lKL5NT6meymaTskNOlQqecDiG5J8uk_PjTzCufFDBkEeccUsXGV62=
+C5EssR_cHVPxQ738O_PYz8-p6JBpxtljCVyoBrhbZ1n-PfcgIVqKilbC5wGftR54LXN72RUcPw5=
+gctBmNdpghhIuPEqGljgmNuntsYinYXYW8omMYkAe22U2VvV1plAxiYk-7I-lt5r6tivsieJ3M0=
+0VSRVpzfLEYSKD6AbSafc55oxGKhFK4uBS5LWWYTo-BjFPxyWGVap1vam-PGviv2AYBy_KqAGH_=
+YJAKlUa9YGpCzPlo0-vtvP6CM5LUqCF8VmOYcvYlQhP_eZ7SOWR7Yysnm-_0AbbLsHo7rq9Zcmd=
+nJJLNMVlm_YB8WxqopKg=3D=3D" target=3D"_blank" style=3D"text-decoration: non=
+e; outline: none; color: #000001" data-link-id=3D"58974fd4a3cc11ecacd1af244=
+34af4e3"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler=
+/images?id=3D05b3d1f4-748b-4451-be05-2527eafa544d" width=3D"32" alt=3D"Face=
+book" border=3D"0" style=3D"display: block; margin: 0; padding: 0;"></a></t=
+d>
+                                  </tr>
+                                </tbody></table>
+                               =20
+                                <!--[if !mso]><!-->
+                               =20
+                                <div style=3D"width: 0; overflow: hidden; =
+float: left; display: none; max-height: 0; line-height: 0; mso-hide: all;" =
+class=3D"mobile_show">=20
+                                  <!-- START Header - (Share) SOCIAL ICONS=
+ ARROW MOBILE Module 2 -->
+                                  <table role=3D"presentation" width=3D"10=
+0%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"mso-hide: all=
+; background-image: linear-gradient(#ffffff,#ffffff);">
+                                    <tbody><tr>
+                                      <td align=3D"left" valign=3D"top"><i=
+nput id=3D"mobile-checkbox_share" style=3D"display: none !important; max-he=
+ight: 0; visibility: hidden;" type=3D"checkbox">
+                                        <table role=3D"presentation" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                          <tbody>
+                                            <tr>
+                                              <td align=3D"right" valign=
+=3D"middle" height=3D"40"><label for=3D"em_drop_share" id=3D"mobile-label_s=
+hare"><b style=3D"width: 20px; background-color: #061d2c;  display: block; =
+height: 3px;"></b> <b style=3D"width: 20px; background-color: #061d2c; disp=
+lay: block; height: 3px; margin-top: 3px;"></b> <b style=3D"width: 20px; ba=
+ckground-color: #061d2c; display: block; height: 3px; margin-top: 3px;"></b=
+> </label></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></td>
+                                    </tr>
+                                  </tbody></table>
+                                </div>
+                               =20
+                                <!--<![endif]--></td>
+                            </tr>
+                          </tbody></table></td>
+                      </tr>
+                    </tbody></table></td>
+                </tr>
+              </tbody></table>
+             =20
+              <!--[if !mso]><!-->
+             =20
+              <div style=3D"width: 0; overflow: hidden; float: left; displ=
+ay: none; max-height: 0; line-height: 0; mso-hide: all;" class=3D"mobile_sh=
+ow">=20
+                <!-- START Header - (Follow) SOCIAL ICONS MOBILE Module 1 =
+-->
+                <table role=3D"presentation" width=3D"100%" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" style=3D"mso-hide: all;" bgcolor=3D"#fff=
+fff">
+                  <tbody><tr>
+                    <td align=3D"left" valign=3D"top"><table role=3D"prese=
+ntation" class=3D"container" style=3D"border-collapse: collapse; border-spa=
+cing: 0; margin: auto;" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                        <tbody><tr>
+                          <td align=3D"left" valign=3D"top" bgcolor=3D"#ff=
+ffff"><table role=3D"presentation" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"">
+                              <tbody><tr>
+                                <td align=3D"left" valign=3D"top"><div cla=
+ss=3D"hamburmenu_share">
+                                    <input id=3D"em_drop_share" type=3D"ch=
+eckbox" style=3D"display: none !important">
+                                    <div class=3D"inn_share" style=3D"marg=
+in-left: 0px; margin-right: 0px; z-index: 50;">=20
+                                     =20
+                                      <!-- START Header - (Follow) MOBILE =
+CONTENT MODULE LINKED IN-->
+                                      <table role=3D"presentation" width=
+=3D"100%" class=3D"menu" style=3D"border-collapse: collapse; border-spacing=
+: 0; mso-hide: all; border-bottom: 1px solid #000000" align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                        <tbody><tr>
+                                          <td align=3D"left" valign=3D"mid=
+dle" style=3D"padding: 9px 14px 9px 20px;"><table role=3D"presentation" wid=
+th=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                              <tbody><tr>
+                                                <td align=3D"left" valign=
+=3D"middle"><table role=3D"presentation" width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+                                                    <tbody><tr>
+                                                      <td align=3D"left" v=
+align=3D"middle" style=3D"vertical-align: middle; color: #000000; -webkit-t=
+ext-fill-color: #000000; font-size: 14px; font-family: Helvetica,  Arial, s=
+ans-serif; line-height: normal; font-weight: normal; padding-right: 10px"> =
+<a data-managed-link=3D"linked_logo_link_url" href=3D"https://email=2Emckin=
+sey=2Ecom/T/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0=
+bcc6/04673f2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0np=
+iPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXI=
+oXcPxvDgUUCCPvXMWoX_3eaFHlkq5FQ5xiZdwPHiF04RXIrNLojXqqmWF2vH_4xf4OMXDoGCxIU=
+mDCWu1Igisok_dMGPKOzw62Hq6zpIzCE5TGvGGxNJ6Yjx2-xs6tvSSTSJkAMoC8v3Dvs5UwlUvC=
+jxfDi7uA-KpOWcHfPirZvm9pgUiBd557Nvbgpp7azE0ApEOjaYxF9ppjk730r4Bs1-JAhjcpTP9=
+UnLeZz5tezLS9EDBAq1ZuLJrMTvES764fZcHAFlJ0ac7C7l1fJ1RJGFki5P2geTI5OSVrIm9Udl=
+uc8p32obfcJdCWO9e69NSuzIoF-32T9QqM-QYBuPW5qPDQETvieaw0H4vKAwdAbzM_3NQTmyN9j=
+LryyOU2iKJpjh2lVCIYLvibSp30fKIHXA4KJAcEfi_wQLGIy6AhtQixKtYWFkEgeY0VT_yxKIji=
+qV8tM101T_Ko5bRtdOuIqjuxxaXb3gDnHmbZ1LHZKtnw_76i8V8q4i95xlyaSBiCn59TaOaHxi3=
+8qTo1e0pVR9CH-JwwSGBU6ETMuX4JJO6fDa41XJIxRw3VZLM_Ip4t_sjpMUegcSR5sZ1RCUxc6b=
+jiXhu1v6I5nxJNasnN_POmN-fyMKHMiB6t3-Br8ta1TUHsK5rk" target=3D"_blank" style=
+=3D"text-decoration: none; outline: none; color: #000001" data-link-id=3D"5=
+8974fd2a3cc11ecacd1af24434af4e3"><span style=3D"color: #000000; -webkit-tex=
+t-fill-color: #000000; text-decoration: none">Share this email on <strong>L=
+inkedIn</strong></span>&nbsp;&nbsp;<img src=3D"https://images=2Eharmony=2Ee=
+psilon=2Ecom/ContentHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87=
+c" width=3D"15" alt=3D">" border=3D"0" style=3D"display: inline-block;"></a=
+> </td>
+                                                    </tr>
+                                                  </tbody></table></td>
+                                                <td align=3D"right" valign=
+=3D"middle"><table role=3D"presentation" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+                                                    <tbody><tr>
+                                                      <td align=3D"left" v=
+align=3D"middle" style=3D"padding: 0px 0px 0px 0px"> <a data-managed-link=
+=3D"linked_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom/T/v7000001=
+85a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcc7/04673f2e-deef-4=
+8f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6=
+bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_=
+3eaFHlkq5FQ5xiZdwPHiF04RXIrNLojXqqmWF2vH_4xf4OMXDoGCxIUmDCWu1Igisok_dMGPKOz=
+w62Hq6zpIzCE5TGvGGxNJ6Yjx2-xs6tvSSTSJkAMoC8v3Dvs5UwlUvCjxfDi7uA-KpOWcHfPirZ=
+vm9pgUiBd557Nvbgpp7azE0ApEOjaYxF9ppjk730r4Bs1-JAhjcpTP9UnLeZz5tezLS9EDBAq1Z=
+uLJrMTvES764fZcHAFlJ0ac7C7l1fJ1RJGFki5P2geTI5OSVrIm9Udluc8p32obfcJdCWO9e69N=
+SuzIoF-32T9QqM-QYBuPW5qPDQETvieaw0H4vKAwdAbzM_3NQTmyN9jLryyOU2iBy9E1kbSJZs-=
+5RYCY9AJMyHek9QwRVwpNIDiCLLoZFcEwxE4vi59zcgeY0VT_yxKIjiqV8tM101T_Ko5bRtdOuI=
+qjuxxaXb3gDnHmbZ1LHZKtnw_76i8V8q4i95xlyaSBiCn59TaOaHxi38qTo1e0pVR9CH-JwwSGB=
+U6ETMuX4JJO6fDa41XJIxRw3VZLM_Ip4t_sjpMUeg4ti5aZtWRQGpNDeyRqMd-j67pWmwKpXvsl=
+rsTFUtgzG7wsBHKgkfWta1TUHsK5rk" target=3D"_blank" style=3D"text-decoration:=
+ none; outline: none; color: #000001" data-link-id=3D"58974fd2a3cc11ecacd1a=
+f24434af4e3"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHan=
+dler/images?id=3D61db3abb-5906-44c8-a258-8ab3de689535" width=3D"32" height=
+=3D"32" alt=3D"LinkedIn" border=3D"0" style=3D"display: block;"></a> </td>
+                                                    </tr>
+                                                  </tbody></table></td>
+                                              </tr>
+                                            </tbody></table></td>
+                                        </tr>
+                                      </tbody></table>
+                                      <!-- END Header - (Follow) MOBILE CO=
+NTENT MODULE LINKED IN-->=20
+                                      <!-- START Header - (Follow) MOBILE =
+CONTENT MODULE TWITTER-->
+                                      <table role=3D"presentation" width=
+=3D"100%" class=3D"menu" style=3D"border-collapse: collapse; border-spacing=
+: 0;  border-bottom: 1px solid #000000" align=3D"left" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0">
+                                        <tbody><tr>
+                                          <td align=3D"left" valign=3D"mid=
+dle" style=3D"padding: 9px 14px 9px 20px;"><table role=3D"presentation" wid=
+th=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                              <tbody><tr>
+                                                <td align=3D"left" valign=
+=3D"middle"><table role=3D"presentation" width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+                                                    <tbody><tr>
+                                                      <td align=3D"left" v=
+align=3D"middle" style=3D"vertical-align: middle; color: #000000; -webkit-t=
+ext-fill-color: #000000; font-size: 14px; font-family: Helvetica,  Arial, s=
+ans-serif; line-height: normal; font-weight: normal; padding-right: 10px"> =
+<a data-managed-link=3D"twitter_logo_link_url" href=3D"https://email=2Emcki=
+nsey=2Ecom/T/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a=
+0bcc8/04673f2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0n=
+piPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHX=
+IoXcPxvDgUUCCPvXMWoX_1UpFqqls_3UuPcL1f8ypQuUgwrNenW5eK9FGRjUOxRU3mHu2wuuuQB=
+G9XoJW521eYTyU6b-kqXXqttWJznC-PG08E6es37mlkbhEEpNeDYa3Kus70-SZUaRr2lRjrkmIE=
+8wOyb2Nuh5H_nhtlFZK3pTsAY9yft30XUBxsjtje_R5v9fcf7wmIhSVHuklyh7UvAmTMwtsh4bc=
+LthPEdPGn2jF6qVlFViVntibuEzdp5YPWQbguv_OQqky53gvHIh-fkqnE2ewk2hzWyQ7L3Dv36o=
+d9JdLlAGkZu5-gHZhITcTgHVLeRP7p_zk8PgnTkXZ5btnx3z5-hj78etwjf7sQ6LUZN38uLEWEs=
+7TXTkO9sACdLdz3DmlKKbzTBcvp7HARZ4TKllzSRroKDavBtCdOtvJz1YIXf_nX-6Y6yPU1q9ae=
+8xt83RO7Qwyn6RQNUYiregRLMYZi6Pz6FRxQDKUlItLPzBPLPnhTPJLhMpE8m2S_ByX4iPuKyiI=
+Sxp1Z40cDEQTblGHT_-G-R_X-3D-F-TuYnTC-1zsA=3D" target=3D"_blank" style=3D"te=
+xt-decoration: none; outline: none; color: #000001" data-link-id=3D"58974fd=
+3a3cc11ecacd1af24434af4e3"><span style=3D"color: #000000; -webkit-text-fill=
+-color: #000000; text-decoration: none">Share this email on <strong>Twitter=
+</strong></span>&nbsp;&nbsp;<img src=3D"https://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c" wid=
+th=3D"15" alt=3D">" border=3D"0" style=3D"display: inline-block;"></a> </td=
+>
+                                                    </tr>
+                                                  </tbody></table></td>
+                                                <td align=3D"right" valign=
+=3D"middle"><table role=3D"presentation" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+                                                    <tbody><tr>
+                                                      <td align=3D"left" v=
+align=3D"middle" style=3D"padding: 0px 0px 0px 0px"> <a data-managed-link=
+=3D"twitter_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom/T/v700000=
+185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcc9/04673f2e-deef-=
+48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl=
+6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX=
+_1UpFqqls_3UuPcL1f8ypQuUgwrNenW5eK9FGRjUOxRU3mHu2wuuuQBG9XoJW521eYTyU6b-kqX=
+XqttWJznC-PG08E6es37mlkbhEEpNeDYa3Kus70-SZUaRr2lRjrkmIE8wOyb2Nuh5H_nhtlFZK3=
+pTsAY9yft30XUBxsjtje_R5v9fcf7wmIhSVHuklyh7UvAmTMwtsh4bcLthPEdPGn2jF6qVlFViV=
+ntibuEzdp5YPWQbguv_OQqky53gvHIh-fkqnE2ewk2h_8xRGQG3xzkfBfXEyyz9znxVIYfk6eGx=
+QUATTI7F-jPTOnb-t-EEtxbtnx3z5-hj78etwjf7sQ6LUZN38uLEWEs7TXTkO9sACdLdz3DmlKK=
+bzTBcvp7HARZ4TKllzSRroKDavBtCdOtvJz1YIXf_nX-6Y6yPU1q9ae8xt83RO7Qwyn6RQNUYir=
+egRLMYZi6Pz6FRxQDKUlIyl6as1E0uheWo1M76dskCT3o4wHlOKk9RwCgn1QX5F8biB42UKYGK2=
+-R_X-3D-F-TuYnTC-1zsA=3D" target=3D"_blank" style=3D"text-decoration: none;=
+ outline: none; color: #000001" data-link-id=3D"58974fd3a3cc11ecacd1af24434=
+af4e3"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/i=
+mages?id=3D635dc295-1b62-47cc-b9ae-f84b32d8f240" width=3D"32" height=3D"32"=
+ alt=3D"Twitter" border=3D"0" style=3D"display: block;"></a> </td>
+                                                    </tr>
+                                                  </tbody></table></td>
+                                              </tr>
+                                            </tbody></table></td>
+                                        </tr>
+                                      </tbody></table>
+                                      <!-- END Header - (Follow) MOBILE CO=
+NTENT MODULE TWITTER-->=20
+                                      <!-- START Header - (Follow) MOBILE =
+CONTENT MODULE FACEBOOK-->
+                                      <table role=3D"presentation" width=
+=3D"100%" class=3D"menu" style=3D"border-collapse: collapse; border-spacing=
+: 0;  border-bottom: 1px solid #000000" align=3D"left" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0">
+                                        <tbody><tr>
+                                          <td align=3D"left" valign=3D"mid=
+dle" style=3D"padding: 9px 14px 9px 20px;"><table role=3D"presentation" wid=
+th=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                              <tbody><tr>
+                                                <td align=3D"left" valign=
+=3D"middle"><table role=3D"presentation" width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+                                                    <tbody><tr>
+                                                      <td align=3D"left" v=
+align=3D"middle" style=3D"vertical-align: middle; color: #000000; -webkit-t=
+ext-fill-color: #000000; font-size: 14px; font-family: Helvetica,  Arial, s=
+ans-serif; line-height: normal; font-weight: normal; padding-right: 10px"> =
+<a data-managed-link=3D"fb_logo_link_url" href=3D"https://email=2Emckinsey=
+=2Ecom/T/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcc=
+a/04673f2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPH=
+b7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXc=
+PxvDgUUCCPvXMWoX_3eaFHlkq5FQ73M5Cxo6SxlqO29dzdRia4ot8oldK_lonRJiJGB7N-rERzT=
+oHht2NwVM1b2XJsV7XvKaf2jeScj701LCEk86ESLroJmoK5L9QMdqdsUN95Rw0k_t8Za1JC2QC9=
+mcSjzoHnKpUpV1NFee1CIKDsHG6lY6AswtqUBj3WcbzY3xSyJQKEGV0xc5GQTyU6b-kqXXssA6I=
+RkfRPlbeBtu7sjR1UrrZ6A8sOcssRCu5P25VRL0lKL5NT6meymaTskNOlQqecDiG5J8uk_PjTzC=
+ufFDBkEeccUsXGV62C5EssR_cHVPxQ738O_PYz8-p6JBpxtljCVyoBrhbZ1nDms_MI2_Bxf7sgh=
+whxFN_fQWH2SkZKR70_j2DxRE3lqkYKkVX6QmWNuntsYinYXYW8omMYkAe22U2VvV1plAxiYk-7=
+I-lt5r6tivsieJ3M00VSRVpzfLEYSKD6AbSafc55oxGKhFK4uBS5LWWYTo-BjFPxyWGVap1vam-=
+PGviv2AYBy_KqAGH_YJAKlUa9YGpCzPlo0-vtvP6CM5LUqCNFcLQKZv1Wq8OdzqQJvsDVDZqMMR=
+-zdpG36MyD0iYNAmdnJJLNMVlm_YB8WxqopKg=3D=3D" target=3D"_blank" style=3D"tex=
+t-decoration: none; outline: none; color: #000001" data-link-id=3D"58974fd4=
+a3cc11ecacd1af24434af4e3"><span style=3D"color: #000000; -webkit-text-fill-=
+color: #000000; text-decoration: none">Share this email on <strong>Facebook=
+</strong></span>&nbsp;&nbsp;<img src=3D"https://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c" wid=
+th=3D"15" alt=3D">" border=3D"0" style=3D"display: inline-block;"></a> </td=
+>
+                                                    </tr>
+                                                  </tbody></table></td>
+                                                <td align=3D"right" valign=
+=3D"middle"><table role=3D"presentation" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+                                                    <tbody><tr>
+                                                      <td align=3D"left" v=
+align=3D"middle" style=3D"padding: 0px 0px 0px 0px"> <a data-managed-link=
+=3D"fb_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom/T/v700000185a8=
+621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bccb/04673f2e-deef-48f5-=
+9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0=
+E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_3eaF=
+Hlkq5FQ73M5Cxo6SxlqO29dzdRia4ot8oldK_lonRJiJGB7N-rERzToHht2NwVM1b2XJsV7XvKa=
+f2jeScj701LCEk86ESLroJmoK5L9QMdqdsUN95Rw0k_t8Za1JC2QC9mcSjzoHnKpUpV1NFee1CI=
+KDsHG6lY6AswtqUBj3WcbzY3xSyJQKEGV0xc5GQTyU6b-kqXXssA6IRkfRPlbeBtu7sjR1UrrZ6=
+A8sOcssRCu5P25VRL0lKL5NT6meymaTskNOlQqecDiG5J8uk_PjTzCufFDBkEeccUsXGV62C5Es=
+sR_cHVPxQ738O_PYz8-p6JBpxtljCVyoBrhbZ1voy_YBljTYXt1u4_ytIEUgpEqUjK7KmSdgrmj=
+k13RvSDqWaccWhga2NuntsYinYXYW8omMYkAe22U2VvV1plAxiYk-7I-lt5r6tivsieJ3M00VSR=
+VpzfLEYSKD6AbSafc55oxGKhFK4uBS5LWWYTo-BjFPxyWGVap1vam-PGviv2AYBy_KqAGH_YJAK=
+lUa9YGpCzPlo0-vtvP6CM5LUqCINzobcoDdNhSdf4i6QUE68LKuZHAlB0iSJuMHCmH_L0mdnJJL=
+NMVlm_YB8WxqopKg=3D=3D" target=3D"_blank" style=3D"text-decoration: none; o=
+utline: none; color: #000001" data-link-id=3D"58974fd4a3cc11ecacd1af24434af=
+4e3"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/ima=
+ges?id=3D05b3d1f4-748b-4451-be05-2527eafa544d" width=3D"32" height=3D"32" a=
+lt=3D"Facebook" border=3D"0" style=3D"display: block;"></a> </td>
+                                                    </tr>
+                                                  </tbody></table></td>
+                                              </tr>
+                                            </tbody></table></td>
+                                        </tr>
+                                      </tbody></table>
+                                      <!-- END Header - (Follow) MOBILE CO=
+NTENT MODULE FACEBOOK-->=20
+                                    </div>
+                                  </div></td>
+                              </tr>
+                            </tbody></table></td>
+                        </tr>
+                      </tbody></table></td>
+                  </tr>
+                </tbody></table>
+                <!-- END Header - (Follow) SOCIAL ICONS MOBILE Module 1 --=
+>=20
+              </div>
+             =20
+              <!--<![endif]-->=20
+             =20
+              <!-- END Header - (Follow) Module 1 --></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+    <!-- End MCK-013: Script Mark + Share --> </td></tr></tbody></table></=
+td></tr><tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"6=
+40" border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFFF"><!-- start FULL WIDTH 1-012 --=
+>
+        <section id=3D"1012_switch_image" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table role=3D"presentation" layout-row=3D"true" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td style=3D"padding: 0px 0px 0px 0px" align=3D"center"><!=
+-- start DESKTOP IMAGE -->
+                 =20
+                  <table role=3D"presentation" width=3D"100%" border=3D"0"=
+ align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"nomob">
+                    <tbody><tr>
+                      <td align=3D"center" valign=3D"top" data-groupid=3D"=
+img"><!-- start 640 x FLEX image -->=20
+                        <a href=3D"https://email=2Emckinsey=2Ecom/capabili=
+ties/strategy-and-corporate-finance/our-insights/artificial-intelligence-in=
+-strategy?__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f=
+2edeef48f50000021ef3a0bccc&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&=
+__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3D=
+2715e51f49294a3690885f761056f9aa&hctky=3D13552232&hdpid=3D04673f2e-deef-48f=
+5-9fea-1bafba8f21e6" data-managed-link=3D"scaled_link_url" target=3D"_blank=
+" data-link-id=3D"1a7e4af1a3c211ecb9c0275e4025097c"><img agilecontent=3D"tr=
+ue" src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=
+=3Da09a8570-53b5-11ec-8be0-7dca8f66e2e9" alt=3D"The Daily Read" width=3D"64=
+0" height=3D"auto" style=3D"display: block;" border=3D"0" class=3D"wrap"> <=
+/a>=20
+                        <!-- end 640 x FLEX image --></td>
+                    </tr>
+                  </tbody></table>
+                 =20
+                  <!--[if !mso]><!-->
+                 =20
+                  <div class=3D"mobile_show" style=3D"display:none;max-hei=
+ght:0px;overflow:hidden;width:0; height:0; mso-hide: all;">
+                    <table role=3D"presentation" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                      <tbody><tr>
+                        <td align=3D"center" class=3D"mobile_show center" =
+style=3D"display: none">                           <!-- start 480 x FLEX im=
+age -->=20
+                          <a href=3D"https://email=2Emckinsey=2Ecom/capabi=
+lities/strategy-and-corporate-finance/our-insights/artificial-intelligence-=
+in-strategy?__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D0467=
+3f2edeef48f50000021ef3a0bccd&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e=
+6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=
+=3Dc07db292a6c642eb8287c771d6974e25&hctky=3D13552232&hdpid=3D04673f2e-deef-=
+48f5-9fea-1bafba8f21e6" data-managed-link=3D"mobile_link_url" target=3D"_bl=
+ank" data-link-id=3D"1a7e4af2a3c211ecb9c0275e4025097c"><img agilecontent=3D=
+"true" src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images=
+?id=3D99734210-b75a-11ec-a928-ef1f2118f545" alt=3D"The Daily Read" width=3D=
+"480" height=3D"auto" style=3D"display: block;" border=3D"0" class=3D"wrap"=
+> </a>=20
+                          <!-- end 480 x FLEX image -->=20
+                           </td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                 =20
+                  <!--<![endif]--></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-012 --> </td></tr><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start FULL WIDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"center" style=3D"padding: 0px 20px 32px=
+ 20px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height=
+-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter=
+-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica=
+, Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p1_te=
+xt" data-groupid=3D"p1" class=3D"mobile_p2"><a style=3D"color: #333333; tex=
+t-decoration: none; font-weight: inherit;" href=3D"https://email=2Emckinsey=
+=2Ecom/featured-insights/the-daily-read?__hScId__=3Dv700000185a8621d0abd53b=
+b6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcce&__hDId__=3D04673f2=
+e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3D=
+other-eml-dre-mip-mck&hlkid=3D4901dc7af9134473a14a3a52d47ee78e&hctky=3D1355=
+2232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D=
+"noopener" data-link-id=3D"da4ce4f0d2ec11ec9c8a23d65af7f73e"><span style=3D=
+"font-size: 16px; color: #757575; line-height: 150%;">AN ARTICLE A DAY, PIC=
+KED BY OUR EDITORS<br></span></a></p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start FULL WIDTH 1-011 -->
+    <section id=3D"1011_scaled_image" layout-row=3D"true">
+      <div layout-row=3D"true">
+        <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" align=3D"cent=
+er" bgcolor=3D"#FFFFFF">
+          <tbody><tr layout-row=3D"true">
+            <td align=3D"center" valign=3D"top" style=3D"padding: 0px 0px =
+0px 0px" data-groupid=3D"img" class=3D"pad0rl"><!-- start 640 x FLEX image =
+--><img agilecontent=3D"true" src=3D"http://images=2Eharmony=2Eepsilon=2Eco=
+m/ContentHandler/images?id=3D92014dd0-ff8e-11eb-89c1-1f2ca2f6c9a5" alt=3D""=
+ width=3D"640" height=3D"auto" style=3D"display: block" border=3D"0" class=
+=3D"wrap"> <!-- end 640 x FLEX image --></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+    <!-- end FULL WIDTH 1-011 --> </td></tr></tbody></table></td></tr><tr>=
+<td align=3D"center" style=3D"font-size:14px"></td></tr><tr><td><table role=
+=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"c=
+enter" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bg=
+color=3D"#FFFFFF"><!-- start FULL WIDTH 1-022 -->
+    <section id=3D"1022_image_text" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF" clas=
+s=3D"wrap">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"" valign=3D"top" style=3D"padding: 0px 40px 0=
+px 40px;" class=3D"pad20rl"> =20
+                 =20
+                  <!-- start IMAGE RIGHT -->
+                 =20
+                  <table role=3D"presentation" width=3D"100%" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap">
+                    <tbody><tr>
+                      <th align=3D"left" valign=3D"middle" class=3D"" styl=
+e=3D"font-weight: normal;"><table role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap">
+                          <tbody><tr>
+                            <td valign=3D"top" align=3D"left"><!-- start P=
+1 -->
+                             =20
+                              <table role=3D"presentation" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap">
+                                <tbody><tr>
+                                  <td align=3D"right" style=3D"padding: 0p=
+x 20px 0px 0px;" class=3D"match"><p style=3D"font-size: 14px; mso-line-heig=
+ht-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; lett=
+er-spacing: 0px; text-transform: none; color: #333333; font-family: Helveti=
+ca, Arial, sans-serif;" enable-personalization=3D"true" data-richtext=3D"p1=
+_text" data-groupid=3D"p1" class=3D"mobile_match"><span style=3D"font-size:=
+ 14px; line-height: 120%; color: rgb(117, 117, 117);">Brought to you by <a =
+href=3D"https://email=2Emckinsey=2Ecom/our-people/liz-hilton-segel?__hScId_=
+_=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021e=
+f3a0bccf&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1j=
+a2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3D8bca020197cf4ad080=
+b360c615416159&hctky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e=
+6" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb(117, 117, 117); f=
+ont-weight: inherit; background-image: none; background-position: initial; =
+background-size: initial; background-repeat: initial; background-attachment=
+: initial; background-origin: initial; background-clip: initial; text-decor=
+ation: none;" data-link-id=3D"e10fe29164bb11eda91fb7ec2b984331"><span style=
+=3D"text-decoration: underline; line-height: 120%;">Liz Hilton Segel</span>=
+</a> &amp; <a href=3D"https://email=2Emckinsey=2Ecom/our-people/homayoun-ha=
+tami?__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f2edee=
+f48f50000021ef3a0bcd0&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD=
+__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3Db144e=
+73326a943d7b2bab74dad3acbb3&hctky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fe=
+a-1bafba8f21e6" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb(117,=
+ 117, 117); font-weight: inherit; background-image: none; background-positi=
+on: initial; background-size: initial; background-repeat: initial; backgrou=
+nd-attachment: initial; background-origin: initial; background-clip: initia=
+l; text-decoration: none;" data-link-id=3D"e10fe29264bb11eda91fb7ec2b984331=
+"><span style=3D"text-decoration: underline; line-height: 120%;">Homayoun H=
+atami</span></a><br>Global leaders, Industry &amp; Capabilities Practices</=
+span></p></td>
+                                </tr>
+                              </tbody></table>
+                             =20
+                              <!-- end P1 --></td>
+                          </tr>
+                        </tbody></table>
+                      </th>
+                      <!-- start Icon  -->
+                      <th width=3D"104" align=3D"left" valign=3D"bottom" c=
+lass=3D""> <table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"center">
+                          <tbody><tr>
+                            <td align=3D"center" data-groupid=3D"img" styl=
+e=3D"padding: 0px 0px 4px 0px"><img agilecontent=3D"true" src=3D"http://ima=
+ges=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3Db6adb800-4f8b-11ed=
+-92b3-d98f8dc13ab4" alt=3D"" width=3D"104" height=3D"auto" border=3D"0"></t=
+d>
+                        </tr></tbody></table>
+                      </th>
+                      <!-- end Icon  -->=20
+                     =20
+                    </tr>
+                  </tbody></table>
+                 =20
+                  <!-- end IMAGE RIGHT -->=20
+</td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+    <!-- end FULL WIDTH 1-022 --> </td></tr><tr><td bgcolor=3D"#FFFFFF"><!=
+-- Start 1-001: Divider -->
+    <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" class=3D"wrap" bgcolor=3D"#FFFFFF" width=3D"100%">
+      <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"padding: 0px 40px 16p=
+x 40px" class=3D"pad20rl">
+          <table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=3D"#B3B3B3">
+            <tbody><tr>
+              <td style=3D"line-height: 1px !important;" align=3D"center" =
+valign=3D"top"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Content=
+Handler/images?id=3D3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"1" styl=
+e=3D"display: block" border=3D"0" alt=3D""></td>
+            </tr>
+          </tbody></table></td>
+      </tr>
+    </tbody></table>
+  <!-- End 1-001: Divider --> </td></tr></tbody></table></td></tr><tr><td =
+bgcolor=3D"#FFFFFF"><!-- Start 1-000: Spacer -->
+  <section id=3D"1001" layout-row=3D"true">
+    <div layout-row=3D"true">
+      <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF">
+        <tbody><tr layout-row=3D"true">
+          <td>
+            <table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" class=3D"wrap">
+              <tbody><tr>
+                              <td height=3D"20" align=3D"left" valign=3D"t=
+op" bgcolor=3D"#FFFFFF" style=3D"line-height: 0px; padding: 0px; "><img src=
+=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3D3f6=
+7ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"20" style=3D"display: block; h=
+eight: 20px;" border=3D"0" alt=3D""></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </section>
+  <!-- End 1-000: Spacer --> </td></tr><tr><td><table role=3D"presentation=
+" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"center" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start FULL WIDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"left" style=3D"padding: 0px 20px 16px 2=
+0px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height-r=
+ule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-s=
+pacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, =
+Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p1_text=
+" data-groupid=3D"p1" class=3D"mobile_match"><a href=3D"https://email=2Emck=
+insey=2Ecom/capabilities/strategy-and-corporate-finance/our-insights/artifi=
+cial-intelligence-in-strategy?__hScId__=3Dv700000185a8621d0abd53bb6e96c660f=
+0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcd1&__hDId__=3D04673f2e-deef-48f=
+5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-=
+dre-mip-mck&hlkid=3D975987cdc5fd4e09bda203e8157446fb&hctky=3D13552232&hdpid=
+=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"noopener"=
+ style=3D"color: rgb(51, 51, 51); font-weight: inherit; background: none; t=
+ext-decoration: none;" data-link-id=3D"7a703a20928e11edb5ea9f94939180c4"><s=
+pan style=3D"font-size: 18px; line-height: 150%;"><strong>Artificial intell=
+igence has become commonplace,</strong> in business as well as in our perso=
+nal toys and appliances=2E But while business functions like marketing, sup=
+ply chain management, and service operations have been quick to embrace the=
+ promise of AI, strategists have been more reticent=2E Yet strategy can gre=
+atly benefit from AI, says McKinsey senior partner </span></a><a href=3D"ht=
+tps://email=2Emckinsey=2Ecom/our-people/yuval-atsmon?__hScId__=3Dv700000185=
+a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcd2&__hDI=
+d__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=
+=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3D1e1ca105068f49a1b418910b993cf973=
+&hctky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_=
+blank" rel=3D"noopener" style=3D"color: rgb(51, 51, 51); font-weight: inher=
+it; background: none; text-decoration: none;" data-link-id=3D"865fccb0928e1=
+1edb5ea9f94939180c4"><span style=3D"font-size: 18px; line-height: 150%;"><s=
+pan style=3D"text-decoration: underline; line-height: 150%;"><span style=3D=
+"color: rgb(34, 81, 255); line-height: 150%; text-decoration: underline;">Y=
+uval Atsmon</span></span></span></a><a href=3D"https://email=2Emckinsey=2Ec=
+om/capabilities/strategy-and-corporate-finance/our-insights/artificial-inte=
+lligence-in-strategy?__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId=
+__=3D04673f2edeef48f50000021ef3a0bcd3&__hDId__=3D04673f2e-deef-48f5-9fea-1b=
+afba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-m=
+ck&hlkid=3Df209cc9f31f34cc1a6b6c848036a465e&hctky=3D13552232&hdpid=3D04673f=
+2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"noopener" style=3D=
+"color: rgb(51, 51, 51); font-weight: inherit; background: none; text-decor=
+ation: none;" data-link-id=3D"7a703a20928e11edb5ea9f94939180c4"><span style=
+=3D"font-size: 18px; line-height: 150%;"> in a <span style=3D"text-decorati=
+on: underline; line-height: 150%;"><span style=3D"color: rgb(34, 81, 255); =
+line-height: 150%; text-decoration: underline;">new episode</span></span> o=
+f McKinsey=E2=80=99s <em>Inside the Strategy Room</em> podcast=2E From anal=
+ytics and forecasts of today to carefully managed delegation of decisions i=
+n the future, the right AI tools can help businesses unlock key improvement=
+s including less-biased decision making and faster strategic choices=2E<br>=
+</span></a></p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr></tbody></table></td></tr>=
+<tr><td bgcolor=3D"#FFFFFF"><!-- Start 1-000: Spacer -->
+  <section id=3D"1001" layout-row=3D"true">
+    <div layout-row=3D"true">
+      <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF">
+        <tbody><tr layout-row=3D"true">
+          <td>
+            <table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" class=3D"wrap">
+              <tbody><tr>
+                              <td height=3D"20" align=3D"left" valign=3D"t=
+op" bgcolor=3D"#FFFFFF" style=3D"line-height: 0px; padding: 0px; "><img src=
+=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3D3f6=
+7ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"20" style=3D"display: block; h=
+eight: 20px;" border=3D"0" alt=3D""></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </section>
+  <!-- End 1-000: Spacer --> </td></tr><tr><td><table role=3D"presentation=
+" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"center" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start INSET 1-011 -->
+    <section id=3D"1011_scaled_image" layout-row=3D"true">
+      <div layout-row=3D"true">
+        <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" align=3D"cent=
+er" bgcolor=3D"#FFFFFF">
+          <tbody><tr layout-row=3D"true">
+            <td align=3D"center" valign=3D"top" style=3D"padding: 0px 20px=
+ 20px 20px"><table role=3D"presentation" width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF" class=3D"wrap">
+                <tbody><tr>
+                  <td align=3D"center" style=3D"padding: 0px 0px 0px 0px" =
+data-groupid=3D"img" class=3D"pad0rl"><!-- start 640 x FLEX image --><a hre=
+f=3D"https://email=2Emckinsey=2Ecom/capabilities/strategy-and-corporate-fin=
+ance/our-insights/artificial-intelligence-in-strategy?stcr=3DCAAD8021321341=
+7B8030E4C2327F4D1F&__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=
+=3D04673f2edeef48f50000021ef3a0bcd4&__hDId__=3D04673f2e-deef-48f5-9fea-1baf=
+ba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck=
+&hlkid=3Dee731f6fcb744e68baa5225c1bc044da&hctky=3D13552232&hdpid=3D04673f2e=
+-deef-48f5-9fea-1bafba8f21e6" data-managed-link=3D"scaled_link_url" target=
+=3D"_blank" data-link-id=3D"78aa6aa1a3c211ecb9c0275e4025097c"><img agilecon=
+tent=3D"true" src=3D"https://www=2Emckinsey=2Ecom/~/media/mckinsey/business=
+%20functions/strategy%20and%20corporate%20finance/our%20insights/artificial=
+%20intelligence%20in%20strategy/itsr-strategy-ai-1224356307-thumb-1536x1536=
+=2Ejpg?mw=3D768&amp;car=3D16:9" alt=3D"Circuit board background" width=3D"6=
+00" height=3D"auto" style=3D"display: block" border=3D"0" class=3D"wrap"> <=
+/a><!-- end 640 x FLEX image --></td>
+                </tr>
+              </tbody></table></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+    <!-- end INSET 1-011 --> </td></tr><tr><td bgcolor=3D"#FFFFFF"><!-- st=
+art FULL WIDTH 1-006 -->
+        <section id=3D"1006_h3" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"left" style=3D"padding: 0px 20px 16px 2=
+0px" class=3D"pad20rl match"><h3 style=3D"font-size: 14px; mso-line-height-=
+rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; letter-=
+spacing: 0px; text-transform: none; color: #000000; font-family: Helvetica,=
+ Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"h3_tex=
+t" data-groupid=3D"h3" class=3D"mobile_h4"><a style=3D"color: #000000; text=
+-decoration: none; font-weight: inherit;" href=3D"https://email=2Emckinsey=
+=2Ecom/capabilities/strategy-and-corporate-finance/our-insights/artificial-=
+intelligence-in-strategy?stcr=3DCAAD80213213417B8030E4C2327F4D1F&__hScId__=
+=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef=
+3a0bcd5&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja=
+2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3Dbc42cf418f4a49ac8f9=
+4bb77c55e08de&hctky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6=
+" target=3D"_blank" rel=3D"noopener" data-link-id=3D"dcd4cfc0a3c211ecb9c027=
+5e4025097c"><strong><span style=3D"font-size: 18px; line-height: 120%;">Art=
+ificial intelligence in strategy</span></strong></a></h3></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-006 --> </td></tr><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start FULL WIDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"left" style=3D"padding: 0px 20px 20px 2=
+0px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height-r=
+ule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-s=
+pacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, =
+Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p1_text=
+" data-groupid=3D"p1" class=3D"mobile_match"><a style=3D"color: #333333; te=
+xt-decoration: none; font-weight: inherit;" href=3D"https://email=2Emckinse=
+y=2Ecom/capabilities/strategy-and-corporate-finance/our-insights/artificial=
+-intelligence-in-strategy?stcr=3DCAAD80213213417B8030E4C2327F4D1F&__hScId__=
+=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef=
+3a0bcd6&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja=
+2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3D2ff8ec002f8b4ebc80a=
+1168433497d94&hctky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6=
+" target=3D"_blank" rel=3D"noopener" data-link-id=3D"399cdc50d20a11ec87e969=
+8e9f9451c8"><span style=3D"font-size: 16px; line-height: 150%;"> AI tools c=
+an help executives avoid biases in decisions, pull insights out of oceans o=
+f data, and make strategic choices more quickly=2E And that=E2=80=99s just =
+the beginning=2E</span></a></p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr></tbody></table></td></tr>=
+<tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" bord=
+er=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap=
+"><tbody><tr><td bgcolor=3D"#FFFFFF"><!-- start FULL WIDTH 1-016 -->
+        <section id=3D"1016_cta" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"center" valign=3D"top" style=3D"padding: 0px =
+0px 20px 0px" class=3D"pad20rl "><table class=3D"wrap" role=3D"presentation=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                    <tbody><tr>
+                      <td valign=3D"top" align=3D"center"><!-- start CTA b=
+lock --><!-- start BOX CTA -->
+                       =20
+                        <table role=3D"presentation" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" width=3D"280" class=3D"wrap ">
+                          <tbody><tr>
+                            <td align=3D"center" valign=3D"top" style=3D"b=
+ackground-color: #2251FF"><!-- start CTA text block -->                    =
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" role=3D"p=
+resentation" class=3D"wrap">
+                                <tbody><tr>
+                                  <td align=3D"center" valign=3D"middle" c=
+lass=3D"cta center" style=3D"font-weight: normal; letter-spacing: 0px; text=
+-transform: none; padding: 8px 20px"><span style=3D"color: #ffffff; font-fa=
+mily: Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: =
+exactly; line-height: 150%" richtext-mode=3D"simple" enable-personalization=
+=3D"true" data-richtext=3D"cta_text" data-groupid=3D"col1_cta"><a href=3D"h=
+ttps://email=2Emckinsey=2Ecom/capabilities/strategy-and-corporate-finance/o=
+ur-insights/artificial-intelligence-in-strategy?stcr=3DCAAD80213213417B8030=
+E4C2327F4D1F&__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D046=
+73f2edeef48f50000021ef3a0bcd7&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21=
+e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=
+=3De392ce496a4c4f8ea83c1e3862e4317a&hctky=3D13552232&hdpid=3D04673f2e-deef-=
+48f5-9fea-1bafba8f21e6" data-managed-link=3D"cta_link_url" target=3D"_blank=
+" style=3D"color: #ffffff; text-decoration: none; font-weight: normal" data=
+-link-id=3D"15017511a3c311ecb9c0275e4025097c"><span style=3D"font-size: 16p=
+x; line-height: 150%;">=EF=BB=BFTune in</span></a></span></td>
+                                </tr>
+                              </tbody></table>
+                              <!-- end CTA text block --></td>
+                          </tr>
+                        </tbody></table>
+                       =20
+                        <!-- end BOX CTA --><!-- end CTA block --></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-016 --> </td></tr></tbody></table></td></tr>=
+<tr><td bgcolor=3D"#FFFFFF"><!-- Start 1-000: Spacer -->
+  <section id=3D"1001" layout-row=3D"true">
+    <div layout-row=3D"true">
+      <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF">
+        <tbody><tr layout-row=3D"true">
+          <td>
+            <table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" class=3D"wrap">
+              <tbody><tr>
+                              <td height=3D"12" align=3D"left" valign=3D"t=
+op" bgcolor=3D"#FFFFFF" style=3D"line-height: 0px; padding: 0px; "><img src=
+=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3D3f6=
+7ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"12" style=3D"display: block; h=
+eight: 12px;" border=3D"0" alt=3D""></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </section>
+  <!-- End 1-000: Spacer --> </td></tr><tr><td><table role=3D"presentation=
+" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"center" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start INSET 1-014 -->
+    <section id=3D"1014_cropped_image" layout-row=3D"true">
+      <div layout-row=3D"true">
+        <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF" class=3D=
+"wrap">
+          <tbody><tr layout-row=3D"true">
+            <td align=3D"left" valign=3D"top" style=3D"padding: 0px 0px 27=
+px 0px"><table role=3D"presentation" width=3D"600" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"wrap" align=3D"center">
+                <tbody><tr>
+                  <td align=3D"right" valign=3D"top" class=3D"nomob" data-=
+groupid=3D"left_img"><!-- start 80 x FLEX image --><img src=3D"http://image=
+s=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3Da3f89570-8927-11ec-a=
+a1e-11ac4fee193c" alt=3D"Quote" width=3D"75" height=3D"auto" style=3D"displ=
+ay: block" border=3D"0" class=3D"wrap"><!-- end 80 x FLEX image --></td>
+                  <td align=3D"center" valign=3D"top" data-groupid=3D"midd=
+le_img"><!-- start 480 x FLEX image --><img agilecontent=3D"true" src=3D"ht=
+tp://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3Daa8c3d10-8=
+927-11ec-b85e-7d53a4a73430" alt=3D"" width=3D"450" height=3D"auto" style=3D=
+"display: block" border=3D"0" class=3D"wrap"><!-- end 480 x FLEX image --><=
+/td>
+                  <td align=3D"left" valign=3D"top" class=3D"nomob" data-g=
+roupid=3D"right_img"><!-- start 80 x FLEX image --><img src=3D"http://image=
+s=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3Db1749460-8927-11ec-9=
+209-57319abcd6ba" alt=3D"" width=3D"75" height=3D"auto" style=3D"display: b=
+lock" border=3D"0" class=3D"wrap"><!-- end 80 x FLEX image --></td>
+                </tr>
+              </tbody></table></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+    <!-- end INSET 1-014  --> </td></tr><tr><td bgcolor=3D"#FFFFFF"><!-- s=
+tart FULL WIDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"center" style=3D"padding: 0px 20px 16px=
+ 20px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height=
+-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter=
+-spacing: 0px; text-transform: uppercase; color: #333333; font-family: Helv=
+etica, Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"=
+p1_text" data-groupid=3D"p1" class=3D"mobile_match"><strong><span style=3D"=
+font-size: 12px; line-height: 150%;">Quote of the day<br></span></strong></=
+p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start FULL WIDTH 1-005 -->
+        <section id=3D"1005_h2" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"center" style=3D"padding: 0px 20px 16px=
+ 20px" class=3D"pad20rl match"><h2 style=3D"font-size: 14px; mso-line-heigh=
+t-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; lette=
+r-spacing: 0px; text-transform: none; color: #000000; font-family: Georgia,=
+ Cambria, Times, Times New Roman, serif" enable-personalization=3D"true" da=
+ta-richtext=3D"h2_text" data-groupid=3D"h2" class=3D"mobile_match"><a style=
+=3D"color: #000000; text-decoration: none; font-weight: inherit;" href=3D"h=
+ttps://email=2Emckinsey=2Ecom/industries/financial-services/our-insights/in=
+surance/leading-with-purpose-an-interview-with-everests-juan-c-andrade?stcr=
+=3DA0376E1F145648028BE2983C1A9F8F3F&__hScId__=3Dv700000185a8621d0abd53bb6e9=
+6c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcd8&__hDId__=3D04673f2e-de=
+ef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dothe=
+r-eml-dre-mip-mck&hlkid=3D236dd8ed7a0b41af9606de439fa2d8c8&hctky=3D13552232=
+&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"noo=
+pener" data-link-id=3D"376b4591a3c311ecb9c0275e4025097c"><span style=3D"fon=
+t-size: 26px; line-height: 120%;">=EF=BB=BF=E2=80=9CAs underwriters, we ten=
+d to look at the world from the rearview mirror, very retroactively=2E We n=
+eed to get out of that mindset and look instead at the risk landscape that =
+we=E2=80=99re in today=2E =2E =2E =2E How do we anticipate the risk and evo=
+lve our ways of thinking to be able to better price, underwrite, and ultima=
+tely provide the capacity that=E2=80=99s needed?=E2=80=9D</span></a></h2></=
+td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-005 --> </td></tr><tr><td bgcolor=3D"#FFFFFF=
+"><!-- start FULL WIDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"center" style=3D"padding: 0px 20px 20px=
+ 20px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height=
+-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter=
+-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica=
+, Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p1_te=
+xt" data-groupid=3D"p1" class=3D"mobile_match"><span style=3D"color: rgb(51=
+, 51, 51); line-height: 150%;"><span style=3D"font-size: 16px; line-height:=
+ 150%;">=E2=80=94Juan C=2E Andrade, CEO of Everest, on addressing emerging =
+risks in the insurance industry in =E2=80=9C</span><span style=3D"font-size=
+: 16px; line-height: 150%;"><a href=3D"https://email=2Emckinsey=2Ecom/T/v70=
+0000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcd9/04673f2e-d=
+eef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-m=
+rJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvX=
+MWoX_0JoZLAZABQFzGdi2cn1iU7KJEa5whIrwYMHDWC7ZWTsZEKVywsVqi7xF7jMkQjD-fXXJp2=
+QzGj6gWyZuZiY4umbvJKanJtuIJ5xoWGp5hGHCFT5tcGYGTnk2C2IQOr17ZVelB4L5dnNhu6Ycn=
+ma7xILNMtH9oCUq0Cv_3Dww01xfAJb8eQ2pR8sGJXhZzxvlTCuEwhj862acLYPbUUauie81PLra=
+wYrgWVJiPc8pNVDwlcQw-uf0XT6fTpRf2ZD1wY87swpYPQRqkDeAzX2zSrZ8NF6vhhXOiUWkT6N=
+yOitnKIu7WyCf58Nn5WkAbyOENqd-dt8CuU4i_E2myM-SH1Xf-QO612c3wDafVs5WvsN1Sr6Mo0=
+qsyvtgDdhpz3CSWn65i4CDc7dMNcE9Jn5uczTFPgL0aXE7ubhgoamVZvx9jKkk7ipml3XV5ewVc=
+DG7RFjVzpFqTP0g3axamJkOlx0tiVGzpNePDfp07yZU5SSRqQsz5aNPr7FQGK1UO87aEjiZjZE3=
+xhMA1x3Sm9w0Q7I5uvfFzt1RBUfoijRegy6zzCEKk86tTzWl3R2CHzYHcs0b9wE4-s6IguvBMJj=
+kzTN9qOQtgfuM5G9DiaeVkxEB9z_neZhd5H" target=3D"_blank" rel=3D"noopener" sty=
+le=3D"color: rgb(51, 51, 51); font-weight: inherit; background: none; text-=
+decoration: none;" data-link-id=3D"85760360813f11edadf051d71571a49d"><span =
+style=3D"text-decoration: underline; line-height: 150%;"><span style=3D"col=
+or: rgb(34, 81, 255); line-height: 150%; text-decoration: underline;">Leadi=
+ng with purpose: An interview with Everest=E2=80=99s Juan C=2E Andrade</spa=
+n></span></a>=E2=80=9D</span></span></p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr></tbody></table></td></tr>=
+<tr><td bgcolor=3D"#FFFFFF"><!-- Start 1-000: Spacer -->
+  <section id=3D"1001" layout-row=3D"true">
+    <div layout-row=3D"true">
+      <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF">
+        <tbody><tr layout-row=3D"true">
+          <td>
+            <table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" class=3D"wrap">
+              <tbody><tr>
+                              <td height=3D"20" align=3D"left" valign=3D"t=
+op" bgcolor=3D"#FFFFFF" style=3D"line-height: 0px; padding: 0px; "><img src=
+=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3D3f6=
+7ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"20" style=3D"display: block; h=
+eight: 20px;" border=3D"0" alt=3D""></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </section>
+  <!-- End 1-000: Spacer --> </td></tr><tr><td bgcolor=3D"#FFFFFF"><!-- St=
+art 1-001: Divider -->
+    <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" class=3D"wrap" bgcolor=3D"#FFFFFF" width=3D"100%">
+      <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"padding: 1px 20px 36p=
+x 20px" class=3D"pad20rl">
+          <table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=3D"#000000">
+            <tbody><tr>
+              <td style=3D"line-height: 1px !important;" align=3D"center" =
+valign=3D"top"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Content=
+Handler/images?id=3D3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"1" styl=
+e=3D"display: block" border=3D"0" alt=3D""></td>
+            </tr>
+          </tbody></table></td>
+      </tr>
+    </tbody></table>
+  <!-- End 1-001: Divider --> </td></tr><tr><td><table role=3D"presentatio=
+n" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFF=
+F"><section id=3D"1010_p3" layout-row=3D"true">
+          <div layout-row=3D"true"><!-- start FULL WIDTH 1-010 -->
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"center" style=3D"padding: 0px 20px 20px=
+ 20px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height=
+-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter=
+-spacing: 0px; text-transform: uppercase; color: #000000; font-family: Helv=
+etica, Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"=
+p3_text" data-groupid=3D"p3" class=3D"mobile_match"><strong><span style=3D"=
+font-size: 12px; line-height: 150%;">Chart of the day<br></span></strong></=
+p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+            <!-- end FULL WIDTH 1-010 --></div>
+        </section> </td></tr></tbody></table></td></tr><tr><td><table role=
+=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"c=
+enter" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bg=
+color=3D"#FFFFFF"><!-- start INSET 1-011 -->
+    <section id=3D"1011_scaled_image" layout-row=3D"true">
+      <div layout-row=3D"true">
+        <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" align=3D"cent=
+er" bgcolor=3D"#FFFFFF">
+          <tbody><tr layout-row=3D"true">
+            <td align=3D"center" valign=3D"top" style=3D"padding: 0px 20px=
+ 0px 20px"><table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF" class=3D"wrap">
+                <tbody><tr>
+                  <td align=3D"center" style=3D"padding: 0px 0px 20px 0px"=
+ data-groupid=3D"img" class=3D"pad0rl"><!-- start 640 x FLEX image --><a hr=
+ef=3D"https://email=2Emckinsey=2Ecom/featured-insights/coronavirus-leading-=
+through-the-crisis/charting-the-path-to-the-next-normal/ai-knows-youre-off-=
+the-clock?stcr=3D7861B4231A1043F6A4BDBBFD6A3DD9FD&__hScId__=3Dv700000185a86=
+21d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcda&__hDId__=
+=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=
+=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3D3b32501d7e2940b89ca572dd6bb0b8a9&hc=
+tky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" data-managed-l=
+ink=3D"scaled_link_url" target=3D"_blank" data-link-id=3D"be8f5f21a3c311ecb=
+9c0275e4025097c"><img agilecontent=3D"true" src=3D"https://www=2Emckinsey=
+=2Ecom/~/media/mckinsey/Email/Alerts/2023/01/email_CoD-SmarTScheduling-ex1-=
+V5-st_1200px=2Epng" alt=3D"Chart of daily time distribution for a utility s=
+ervice crew" width=3D"600" height=3D"auto" style=3D"display: block" border=
+=3D"0" class=3D"wrap"> </a><!-- end 640 x FLEX image --></td>
+                </tr>
+              </tbody></table></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+    <!-- end INSET 1-011 --> </td></tr></tbody></table></td></tr><tr><td><=
+table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" =
+align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody>=
+<tr><td bgcolor=3D"#FFFFFF"><!-- start FULL WIDTH 1-016 -->
+        <section id=3D"1016_cta" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"center" valign=3D"top" style=3D"padding: 0px =
+0px 20px 0px" class=3D"pad20rl "><table class=3D"wrap" role=3D"presentation=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                    <tbody><tr>
+                      <td valign=3D"top" align=3D"center"><!-- start CTA b=
+lock --><!-- start BOX CTA -->
+                       =20
+                        <table role=3D"presentation" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" width=3D"280" class=3D"wrap ">
+                          <tbody><tr>
+                            <td align=3D"center" valign=3D"top" style=3D"b=
+ackground-color: #2251FF"><!-- start CTA text block -->                    =
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" role=3D"p=
+resentation" class=3D"wrap">
+                                <tbody><tr>
+                                  <td align=3D"center" valign=3D"middle" c=
+lass=3D"cta center" style=3D"font-weight: normal; letter-spacing: 0px; text=
+-transform: none; padding: 8px 20px"><span style=3D"color: #ffffff; font-fa=
+mily: Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: =
+exactly; line-height: 150%" richtext-mode=3D"simple" enable-personalization=
+=3D"true" data-richtext=3D"cta_text" data-groupid=3D"col1_cta"><a href=3D"h=
+ttps://email=2Emckinsey=2Ecom/featured-insights/coronavirus-leading-through=
+-the-crisis/charting-the-path-to-the-next-normal/ai-knows-youre-off-the-clo=
+ck?stcr=3D7861B4231A1043F6A4BDBBFD6A3DD9FD&__hScId__=3Dv700000185a8621d0abd=
+53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcdb&__hDId__=3D0467=
+3f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=
+=3Dother-eml-dre-mip-mck&hlkid=3D898dbe3a7ae244a6848fdd9c294f6d9b&hctky=3D1=
+3552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" data-managed-link=3D"=
+cta_link_url" target=3D"_blank" style=3D"color: #ffffff; text-decoration: n=
+one; font-weight: normal" data-link-id=3D"d2f14461a3c311ecb9c0275e4025097c"=
+><span style=3D"font-size: 16px; line-height: 150%;">See today=E2=80=99s ch=
+art&nbsp;&nbsp;</span></a></span></td>
+                                </tr>
+                              </tbody></table>
+                              <!-- end CTA text block --></td>
+                          </tr>
+                        </tbody></table>
+                       =20
+                        <!-- end BOX CTA --><!-- end CTA block --></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-016 --> </td></tr></tbody></table></td></tr>=
+<tr><td bgcolor=3D"#FFFFFF"><!-- Start 1-000: Spacer -->
+  <section id=3D"1001" layout-row=3D"true">
+    <div layout-row=3D"true">
+      <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#FFFFFF">
+        <tbody><tr layout-row=3D"true">
+          <td>
+            <table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" class=3D"wrap">
+              <tbody><tr>
+                              <td height=3D"20" align=3D"left" valign=3D"t=
+op" bgcolor=3D"#FFFFFF" style=3D"line-height: 0px; padding: 0px; "><img src=
+=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3D3f6=
+7ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"20" style=3D"display: block; h=
+eight: 20px;" border=3D"0" alt=3D""></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </section>
+  <!-- End 1-000: Spacer --> </td></tr><tr><td bgcolor=3D"#FFFFFF"><!-- St=
+art 1-001: Divider -->
+    <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" class=3D"wrap" bgcolor=3D"#FFFFFF" width=3D"100%">
+      <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"padding: 1px 20px 36p=
+x 20px" class=3D"pad20rl">
+          <table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=3D"#000000">
+            <tbody><tr>
+              <td style=3D"line-height: 1px !important;" align=3D"center" =
+valign=3D"top"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Content=
+Handler/images?id=3D3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"1" styl=
+e=3D"display: block" border=3D"0" alt=3D""></td>
+            </tr>
+          </tbody></table></td>
+      </tr>
+    </tbody></table>
+  <!-- End 1-001: Divider --> </td></tr><tr><td><table role=3D"presentatio=
+n" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFF=
+F"><section id=3D"1010_p3" layout-row=3D"true">
+          <div layout-row=3D"true"><!-- start FULL WIDTH 1-010 -->
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"center" style=3D"padding: 0px 20px 20px=
+ 20px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height=
+-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter=
+-spacing: 0px; text-transform: uppercase; color: #000000; font-family: Helv=
+etica, Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"=
+p3_text" data-groupid=3D"p3" class=3D"mobile_match"><strong><span style=3D"=
+font-size: 12px; line-height: 150%;">ALSO NEW<br></span></strong></p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+            <!-- end FULL WIDTH 1-010 --></div>
+        </section> </td></tr></tbody></table></td></tr><tr><td><table role=
+=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" border=3D"0" align=3D"c=
+enter" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap"><tbody><tr><td bg=
+color=3D"#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id=3D"MCK004" layout-row=3D"true">
+					<div layout-row=3D"true">
+						<table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff" class=3D"w=
+rap">
+							<tbody><tr layout-row=3D"true">
+								<td>
+									<table role=3D"presentation" align=3D"center" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+										<tbody><tr>
+											<td align=3D"left" valign=3D"top" style=3D"vertical-align: top;=
+ padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor=3D"#fffff=
+f">
+												<table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0" align=3D"center">
+													<tbody><tr>
+														<th align=3D"left" valign=3D"top" style=3D"vertical-align: t=
+op; padding: 0px; font-weight: normal; width: 170px" class=3D"colsplit tops=
+tack" width=3D"170">
+															<table role=3D"presentation" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+																<tbody><tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 4px 20px 0px 0px;" class=3D"pad0r pad20b" data-groupid=3D"i=
+mg"><a data-managed-link=3D"img_link_url" href=3D"https://email=2Emckinsey=
+=2Ecom/industries/healthcare-systems-and-services/our-insights/one-billion-=
+days-lost-how-covid-19-is-hurting-the-us-workforce?stcr=3D6C591462A03745ED8=
+86E7941DA27D580&__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D=
+04673f2edeef48f50000021ef3a0bcdc&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8=
+f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hl=
+kid=3Df6bd656dc8c241e48f34c69800f28a59&hctky=3D13552232&hdpid=3D04673f2e-de=
+ef-48f5-9fea-1bafba8f21e6" target=3D"_blank" data-link-id=3D"91f39520a3c411=
+ecb9c0275e4025097c"><img agilecontent=3D"true" src=3D"https://www=2Emckinse=
+y=2Ecom/~/media/mckinsey/industries/healthcare%20systems%20and%20services/o=
+ur%20insights/one%20billion%20days%20lost%20how%20covid%2019%20is%20hurting=
+%20the%20us%20workforce/one%20billion%20days%20lost-%20how%20covid-19%20is%=
+20hurting%20the%20us%20workforce_1370336800_standard_1536x1536=2Ejpg?mw=3D7=
+68&amp;car=3D16:9" alt=3D"A young woman sitting on her couch wrapped in a b=
+lanket with used tissues laying next to her=2E" width=3D"170" height=3D"aut=
+o" style=3D"display: block;" border=3D"0" class=3D"wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align=3D"left" valign=3D"top" style=3D"vertical-align: t=
+op; padding: 0px; font-weight: normal;" class=3D"colsplit botstack">
+															<table role=3D"presentation" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+																<tbody><tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 2px 0px 10px 0px;">
+																	<h4 style=3D"font-size: 14px; mso-line-height-rule: exact=
+ly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; fo=
+nt-family: Helvetica, Arial, sans-serif;" enable-personalization=3D"true" d=
+ata-richtext=3D"headline_text" data-groupid=3D"headline" class=3D"mobile_h4=
+"><a style=3D"color: #000000; text-decoration: none; font-weight: inherit;"=
+ href=3D"https://email=2Emckinsey=2Ecom/industries/healthcare-systems-and-s=
+ervices/our-insights/one-billion-days-lost-how-covid-19-is-hurting-the-us-w=
+orkforce?stcr=3D6C591462A03745ED886E7941DA27D580&__hScId__=3Dv700000185a862=
+1d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcdd&__hDId__=
+=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=
+=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3Dc61f46b3088a42b7bc474a1c1782c049&hc=
+tky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_bla=
+nk" rel=3D"noopener" data-link-id=3D"70d89650a3c511ecb9c0275e4025097c"><str=
+ong><span style=3D"font-size: 18px; line-height: 120%;">One billion days lo=
+st: How COVID-19 is hurting the US workforce</span></strong></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 0px 0px 10px 0px;">
+																	<p style=3D"font-size: 14px; mso-line-height-rule: exactl=
+y; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px=
+; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans=
+-serif;" enable-personalization=3D"true" data-richtext=3D"col1_p1_text" dat=
+a-groupid=3D"col1_p1" class=3D"mobile_p1"><a style=3D"color: #333333; text-=
+decoration: none; font-weight: inherit;" href=3D"https://email=2Emckinsey=
+=2Ecom/industries/healthcare-systems-and-services/our-insights/one-billion-=
+days-lost-how-covid-19-is-hurting-the-us-workforce?stcr=3D6C591462A03745ED8=
+86E7941DA27D580&__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D=
+04673f2edeef48f50000021ef3a0bcde&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8=
+f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hl=
+kid=3De31d5416b8ca4cea92cc6e2674064aab&hctky=3D13552232&hdpid=3D04673f2e-de=
+ef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"noopener" data-link-id=
+=3D"5a884a30d20a11ec87e9698e9f9451c8"><span style=3D"font-size: 14px; line-=
+height: 150%;">COVID-19 may no longer be a pandemic, but the disease likely=
+ reduced the availability of the US workforce by as much as 2=2E6 percent i=
+n 2022=E2=80=94a burden on productivity that could last for years=2E</span>=
+</a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 0px 0px 0px 0px;">
+																	<p style=3D"font-size: 14px; mso-line-height-rule: exactl=
+y; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px=
+; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans=
+-serif;" enable-personalization=3D"true" data-richtext=3D"text_link_text" d=
+ata-groupid=3D"text_link" class=3D"mobile_p1"><a style=3D"color: rgb(51, 51=
+, 51); font-weight: inherit; background: none; text-decoration: none;" href=
+=3D"https://email=2Emckinsey=2Ecom/industries/healthcare-systems-and-servic=
+es/our-insights/one-billion-days-lost-how-covid-19-is-hurting-the-us-workfo=
+rce?stcr=3D6C591462A03745ED886E7941DA27D580&__hScId__=3Dv700000185a8621d0ab=
+d53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bcdf&__hDId__=3D046=
+73f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&ci=
+d=3Dother-eml-dre-mip-mck&hlkid=3Ddcd8eb7857684cca99e491341c0c70e1&hctky=3D=
+13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" re=
+l=3D"noopener" data-link-id=3D"fcfbf39085c311ec93241520cc78375e"><span styl=
+e=3D"font-size: 14px; line-height: 150%;"><strong>Grasp the ramifications <=
+/strong></span>&nbsp;<img style=3D"font-size: 2px; color: #000000; line-hei=
+ght: 0px; margin: 0;" src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/Conten=
+tHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c" alt=3D"" width=
+=3D"20" border=3D"0" data-mce-src=3D"http://images=2Eharmony=2Eepsilon=2Eco=
+m/ContentHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c">=EF=BB=
+=BF</a></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></t=
+r><tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" bo=
+rder=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wr=
+ap"><tbody><tr><td bgcolor=3D"#ffffff"><!-- Start MCK-004: Content | 2|3 --=
+>
+				<section id=3D"MCK004" layout-row=3D"true">
+					<div layout-row=3D"true">
+						<table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff" class=3D"w=
+rap">
+							<tbody><tr layout-row=3D"true">
+								<td>
+									<table role=3D"presentation" align=3D"center" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+										<tbody><tr>
+											<td align=3D"left" valign=3D"top" style=3D"vertical-align: top;=
+ padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor=3D"#fffff=
+f">
+												<table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0" align=3D"center">
+													<tbody><tr>
+														<th align=3D"left" valign=3D"top" style=3D"vertical-align: t=
+op; padding: 0px; font-weight: normal; width: 170px" class=3D"colsplit tops=
+tack" width=3D"170">
+															<table role=3D"presentation" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+																<tbody><tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 4px 20px 0px 0px;" class=3D"pad0r pad20b" data-groupid=3D"i=
+mg"><a data-managed-link=3D"img_link_url" href=3D"https://email=2Emckinsey=
+=2Ecom/industries/industrials-and-electronics/our-insights/unlocking-the-in=
+dustrial-potential-of-robotics-and-automation?stcr=3D8280C302EA7948CEB0D5CB=
+CCA69D9BD4&__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673=
+f2edeef48f50000021ef3a0bce0&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6=
+&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=
+=3D581a6de96e064d6f975a6070feb41d4d&hctky=3D13552232&hdpid=3D04673f2e-deef-=
+48f5-9fea-1bafba8f21e6" target=3D"_blank" data-link-id=3D"9ae1ce90a3c411ecb=
+9c0275e4025097c"><img agilecontent=3D"true" src=3D"https://www=2Emckinsey=
+=2Ecom/~/media/mckinsey/industries/advanced%20electronics/our%20insights/un=
+locking%20the%20industrial%20potential%20of%20robotics%20and%20automation/c=
+larion-943842590-standard-1536x1536=2Ejpg?mw=3D768&amp;car=3D16:9" alt=3D"Y=
+oung mechanical engineering workers operate a machine for winding copper wi=
+re" width=3D"170" height=3D"auto" style=3D"display: block;" border=3D"0" cl=
+ass=3D"wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align=3D"left" valign=3D"top" style=3D"vertical-align: t=
+op; padding: 0px; font-weight: normal;" class=3D"colsplit botstack">
+															<table role=3D"presentation" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+																<tbody><tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 2px 0px 10px 0px;">
+																	<h4 style=3D"font-size: 14px; mso-line-height-rule: exact=
+ly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; fo=
+nt-family: Helvetica, Arial, sans-serif;" enable-personalization=3D"true" d=
+ata-richtext=3D"headline_text" data-groupid=3D"headline" class=3D"mobile_h4=
+"><a style=3D"color: #000000; text-decoration: none; font-weight: inherit;"=
+ href=3D"https://email=2Emckinsey=2Ecom/industries/industrials-and-electron=
+ics/our-insights/unlocking-the-industrial-potential-of-robotics-and-automat=
+ion?stcr=3D8280C302EA7948CEB0D5CBCCA69D9BD4&__hScId__=3Dv700000185a8621d0ab=
+d53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bce1&__hDId__=3D046=
+73f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&ci=
+d=3Dother-eml-dre-mip-mck&hlkid=3D6a57da61019f404fbddef77c1752002d&hctky=3D=
+13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" re=
+l=3D"noopener" data-link-id=3D"9ae1ce91a3c411ecb9c0275e4025097c"><span styl=
+e=3D"font-size: 18px; line-height: 120%;"><strong>Unlocking the industrial =
+potential of robotics and automation</strong></span></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 0px 0px 10px 0px;">
+																	<p style=3D"font-size: 14px; mso-line-height-rule: exactl=
+y; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px=
+; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans=
+-serif;" enable-personalization=3D"true" data-richtext=3D"col1_p1_text" dat=
+a-groupid=3D"col1_p1" class=3D"mobile_p1"><a style=3D"color: #333333; text-=
+decoration: none; font-weight: inherit;" href=3D"https://email=2Emckinsey=
+=2Ecom/industries/industrials-and-electronics/our-insights/unlocking-the-in=
+dustrial-potential-of-robotics-and-automation?stcr=3D8280C302EA7948CEB0D5CB=
+CCA69D9BD4&__hScId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673=
+f2edeef48f50000021ef3a0bce2&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6=
+&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=
+=3D3bfd893921e2420ca38804ccb0b649be&hctky=3D13552232&hdpid=3D04673f2e-deef-=
+48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"noopener" data-link-id=3D"=
+7ba0e290d20a11ec87e9698e9f9451c8"><span style=3D"font-size: 14px; line-heig=
+ht: 150%;">Results from the 2022 McKinsey Global Industrial Robotics Survey=
+ reveal that industrial companies are set to spend heavily on robotics and =
+automation=2E However, many will need help to complete the journey=2E</span=
+></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 0px 0px 0px 0px;">
+																	<p style=3D"font-size: 14px; mso-line-height-rule: exactl=
+y; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px=
+; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans=
+-serif;" enable-personalization=3D"true" data-richtext=3D"text_link_text" d=
+ata-groupid=3D"text_link" class=3D"mobile_p1"><a style=3D"color: rgb(51, 51=
+, 51); font-weight: inherit; background: none; text-decoration: none;" href=
+=3D"https://email=2Emckinsey=2Ecom/industries/industrials-and-electronics/o=
+ur-insights/unlocking-the-industrial-potential-of-robotics-and-automation?s=
+tcr=3D8280C302EA7948CEB0D5CBCCA69D9BD4&__hScId__=3Dv700000185a8621d0abd53bb=
+6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bce3&__hDId__=3D04673f2e=
+-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Do=
+ther-eml-dre-mip-mck&hlkid=3Ddb67dabd54f841a9b6d2d4685d6229b5&hctky=3D13552=
+232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"=
+noopener" data-link-id=3D"fcfbf39085c311ec93241520cc78375e"><strong>Get a h=
+ead start &nbsp;</strong><img style=3D"font-size: 2px; color: #000000; line=
+-height: 0px; margin: 0;" src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/Co=
+ntentHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c" alt=3D"" wid=
+th=3D"20" border=3D"0" data-mce-src=3D"http://images=2Eharmony=2Eepsilon=2E=
+com/ContentHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c">=EF=BB=
+=BF</a></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></t=
+r><tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" bo=
+rder=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wr=
+ap"><tbody><tr><td bgcolor=3D"#ffffff"><!-- Start MCK-004: Content | 2|3 --=
+>
+				<section id=3D"MCK004" layout-row=3D"true">
+					<div layout-row=3D"true">
+						<table layout-row=3D"true" role=3D"presentation" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff" class=3D"w=
+rap">
+							<tbody><tr layout-row=3D"true">
+								<td>
+									<table role=3D"presentation" align=3D"center" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+										<tbody><tr>
+											<td align=3D"left" valign=3D"top" style=3D"vertical-align: top;=
+ padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor=3D"#fffff=
+f">
+												<table role=3D"presentation" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0" align=3D"center">
+													<tbody><tr>
+														<th align=3D"left" valign=3D"top" style=3D"vertical-align: t=
+op; padding: 0px; font-weight: normal; width: 170px" class=3D"colsplit tops=
+tack" width=3D"170">
+															<table role=3D"presentation" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+																<tbody><tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 4px 20px 0px 0px;" class=3D"pad0r pad20b" data-groupid=3D"i=
+mg"><a data-managed-link=3D"img_link_url" href=3D"https://email=2Emckinsey=
+=2Ecom/mhi/our-insights/stay-grounded-stay-humble-sanofi-ceo-paul-hudson?st=
+cr=3D6B5B3071AB0D4F2E972E077212C38DC0&__hScId__=3Dv700000185a8621d0abd53bb6=
+e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bce4&__hDId__=3D04673f2e-=
+deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dot=
+her-eml-dre-mip-mck&hlkid=3D1e57fafbef18426aacf0223247480c43&hctky=3D135522=
+32&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" data-lin=
+k-id=3D"9e2adf10a3c411ecb9c0275e4025097c"><img agilecontent=3D"true" src=3D=
+"https://www=2Emckinsey=2Ecom/~/media/mckinsey/mckinsey%20health%20institut=
+e/our%20insights/stay%20grounded%20stay%20humble%20sanofi%20ceo%20paul%20hu=
+dson/paul%20hudson-hero-50-50-1536x1536=2Ejpg?mw=3D768&amp;car=3D16:9" alt=
+=3D"Paul Hudson" width=3D"170" height=3D"auto" style=3D"display: block;" bo=
+rder=3D"0" class=3D"wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align=3D"left" valign=3D"top" style=3D"vertical-align: t=
+op; padding: 0px; font-weight: normal;" class=3D"colsplit botstack">
+															<table role=3D"presentation" width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+																<tbody><tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 2px 0px 10px 0px;">
+																	<h4 style=3D"font-size: 14px; mso-line-height-rule: exact=
+ly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; fo=
+nt-family: Helvetica, Arial, sans-serif;" enable-personalization=3D"true" d=
+ata-richtext=3D"headline_text" data-groupid=3D"headline" class=3D"mobile_h4=
+"><a style=3D"color: #000000; text-decoration: none; font-weight: inherit;"=
+ href=3D"https://email=2Emckinsey=2Ecom/mhi/our-insights/stay-grounded-stay=
+-humble-sanofi-ceo-paul-hudson?stcr=3D6B5B3071AB0D4F2E972E077212C38DC0&__hS=
+cId__=3Dv700000185a8621d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000=
+021ef3a0bce5&__hDId__=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3=
+Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dother-eml-dre-mip-mck&hlkid=3Defe16607e1d24b=
+59a21458b48cd2acd9&hctky=3D13552232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8=
+f21e6" target=3D"_blank" rel=3D"noopener" data-link-id=3D"9e2adf11a3c411ecb=
+9c0275e4025097c"><span style=3D"font-size: 18px; line-height: 120%;"><stron=
+g>=E2=80=98Stay grounded, stay humble=E2=80=99: Sanofi CEO Paul Hudson</str=
+ong></span></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 0px 0px 10px 0px;">
+																	<p style=3D"font-size: 14px; mso-line-height-rule: exactl=
+y; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px=
+; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans=
+-serif;" enable-personalization=3D"true" data-richtext=3D"col1_p1_text" dat=
+a-groupid=3D"col1_p1" class=3D"mobile_p1"><a style=3D"color: #333333; text-=
+decoration: none; font-weight: inherit;" href=3D"https://email=2Emckinsey=
+=2Ecom/mhi/our-insights/stay-grounded-stay-humble-sanofi-ceo-paul-hudson?st=
+cr=3D6B5B3071AB0D4F2E972E077212C38DC0&__hScId__=3Dv700000185a8621d0abd53bb6=
+e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bce6&__hDId__=3D04673f2e-=
+deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3Dot=
+her-eml-dre-mip-mck&hlkid=3D24e947a58e85462bae65a2a6e76d75c3&hctky=3D135522=
+32&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"n=
+oopener" data-link-id=3D"893dfe10d20a11ec87e9698e9f9451c8"><span style=3D"f=
+ont-size: 14px; line-height: 150%;">In the wake of the COVID-19 pandemic, o=
+ne of the first non-French leaders of the pharmaceutical company Sanofi exp=
+lains cultural transformations, the growth of AI in decision making, and ho=
+w he stays humble=2E</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align=3D"left" valign=3D"top" style=3D"vertical-align=
+: top; padding: 0px 0px 0px 0px;">
+																	<p style=3D"font-size: 14px; mso-line-height-rule: exactl=
+y; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px=
+; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans=
+-serif;" enable-personalization=3D"true" data-richtext=3D"text_link_text" d=
+ata-groupid=3D"text_link" class=3D"mobile_p1"><a style=3D"color: #333333; t=
+ext-decoration: none; font-weight: inherit;" href=3D"https://email=2Emckins=
+ey=2Ecom/mhi/our-insights/stay-grounded-stay-humble-sanofi-ceo-paul-hudson?=
+stcr=3D6B5B3071AB0D4F2E972E077212C38DC0&__hScId__=3Dv700000185a8621d0abd53b=
+b6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bce7&__hDId__=3D04673f2=
+e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3Dd3d3Lm1ja2luc2V5LmNvbQ=3D=3D&cid=3D=
+other-eml-dre-mip-mck&hlkid=3D96f149c21c374b42babbe8272bb0d2fe&hctky=3D1355=
+2232&hdpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D=
+"noopener" data-link-id=3D"fcfbf39085c311ec93241520cc78375e"><span style=3D=
+"font-size: 14px; line-height: 150% !important;"><strong>Be impactful </str=
+ong></span>&nbsp;<img style=3D"font-size: 2px; color: #000000; line-height:=
+ 0px; margin: 0;" src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHan=
+dler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c" alt=3D"" width=3D"20=
+" border=3D"0" data-mce-src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/Cont=
+entHandler/images?id=3Dcd761513-936e-4a05-8196-6fb668e6a87c"></a></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></t=
+r><tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" bo=
+rder=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wr=
+ap"><tbody><tr><td bgcolor=3D"#FFFFFF"><!-- start FULL WIDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"right" style=3D"padding: 0px 20px 36px =
+20px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height-=
+rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-=
+spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica,=
+ Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p1_tex=
+t" data-groupid=3D"p1" class=3D"mobile_match"><em><span style=3D"font-size:=
+ 16px; color: #636363; line-height: 150%;"><span style=3D"color: rgb(117, 1=
+17, 117); line-height: 150%;">=E2=80=94 Edited by Stephanie d=E2=80=99Arc T=
+aylor<strong>,</strong> editor, Southern California</span><br></span></em><=
+/p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr></tbody></table></td></tr>=
+<tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"640" bord=
+er=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"wrap=
+"><tbody><tr><td bgcolor=3D"#FFFFFF"><!-- Start 1-001: Divider -->
+    <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" class=3D"wrap" bgcolor=3D"#FFFFFF" width=3D"100%">
+      <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"padding: 0px 20px 20p=
+x 20px" class=3D"pad20rl">
+          <table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=3D"#000000">
+            <tbody><tr>
+              <td style=3D"line-height: 1px !important;" align=3D"center" =
+valign=3D"top"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Content=
+Handler/images?id=3D3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"1" styl=
+e=3D"display: block" border=3D"0" alt=3D""></td>
+            </tr>
+          </tbody></table></td>
+      </tr>
+    </tbody></table>
+  <!-- End 1-001: Divider --> </td></tr><tr><td bgcolor=3D"#ffffff"><!-- S=
+tart MCK-008: Footer | Logo + Social Icons -->
+    <section id=3D"MCK008" layout-row=3D"true">
+      <div layout-row=3D"true">
+        <table layout-row=3D"true" role=3D"presentation" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff" class=3D=
+"wrap">
+          <tbody><tr layout-row=3D"true">
+            <td><table role=3D"presentation" align=3D"center" width=3D"100=
+%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+              <tbody><tr>
+                <td align=3D"center" style=3D"vertical-align: top; padding=
+: 0px 20px 20px 15px; background-color: #ffffff;" bgcolor=3D"#ffffff" class=
+=3D"pad20r pad15l"><table role=3D"presentation" width=3D"100%" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0">
+                    <tbody><tr>
+                      <td align=3D"center" valign=3D"top"><table role=3D"p=
+resentation" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+">
+
+                          <tbody><tr>
+                            <th align=3D"left" valign=3D"middle" style=3D"=
+vertical-align: middle; padding: 0px; font-weight: normal; width: 245px" wi=
+dth=3D"245" class=3D"colsplit">
+                             =20
+                              <table role=3D"presentation" width=3D"100%" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                <tbody><tr>
+                                  <td align=3D"left" valign=3D"top" class=
+=3D"pad16b" data-groupid=3D"mck_logo"><a href=3D"email=2Emckinsey=2Ecom://e=
+mail=2Emckinsey=2Ecom://mckinsey=2Ecom/homefeed?__hScId__=3Dv700000185a8621=
+d0abd53bb6e96c660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bce8&__hDId__=
+=3D04673f2e-deef-48f5-9fea-1bafba8f21e6&__hSD__=3DaHR0cA=3D=3D&cid=3Dother-=
+eml-dre-mip-mck&hlkid=3D16c779408ffb434f91a1d0bd2c35308b&hctky=3D13552232&h=
+dpid=3D04673f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" style=3D"tex=
+t-decoration: none;" data-managed-link=3D"mck_logo_link_url" data-link-id=
+=3D"138cf620a3c611ecb9c0275e4025097c"><img src=3D"http://images=2Eharmony=
+=2Eepsilon=2Ecom/ContentHandler/images?id=3D3471f65a-13c6-4f67-af56-8135371=
+fa1ba" width=3D"146" alt=3D"McKinsey &amp; Company" border=3D"0" style=3D"d=
+isplay: block; margin: 0; padding: 0;"></a></td>
+                                </tr>
+                              </tbody></table>
+                             =20
+                              </th>
+                            <th align=3D"right" valign=3D"middle" style=3D=
+"vertical-align: middle; padding: 0px; font-weight: normal;" class=3D"colsp=
+lit left">
+                             =20
+                              <table role=3D"presentation" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" class=3D"wrap">
+                                <tbody><tr>
+                                  <td align=3D"left" valign=3D"middle" sty=
+le=3D"vertical-align: middle; text-align: left; padding: 0px 12px 0px 0px">=
+<p style=3D"font-size: 14px; mso-line-height-rule: exactly; line-height: 12=
+0%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: =
+none; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-pe=
+rsonalization=3D"true" data-richtext=3D"follow_text" data-groupid=3D"follow=
+" class=3D"mobile_match"><span style=3D"font-size: 14px; line-height: 120% =
+!important;"><strong>Follow our thinking</strong></span></p></td>
+                                 =20
+                                  <td align=3D"right" valign=3D"top"><tabl=
+e role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                      <tbody><tr>
+                                        <td align=3D"left" valign=3D"middl=
+e" style=3D"padding: 0px 10px 0px 0px" data-groupid=3D"linked_logo"><a data=
+-managed-link=3D"linked_logo_link_url" href=3D"https://email=2Emckinsey=2Ec=
+om/T/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bce9/04=
+673f2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gz=
+q29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvD=
+gUUCCPvXMWoX_0JoZLAZABQF0G1259ZAW1Zj_UalJpFN4gjYScUNORveqqWdlNB49cPBS5o8DWw=
+7zWFBQn1_NfoyihezoN_RS3YaWTOGTUNh6n6DhLJAN4k07dA895J5y6i8O4ZTPSdmJRS82CfrE5=
+z_OOSZytq67ftQp5Ceg9eLDq1YFcD7FraHY95vI_Vr4YR8arkTu3_dtgcgGl74OZqDGgQn-Q_Ei=
+hfREHODxmCYTQhWdtX8ryByV_uKv7GaE41Xi_so033ta7YKrV_Q5bfJ-6p0Trdv99NaFhcuLeK-=
+n3xkVisLUwKXV7R7b90sPQpPoVHFAMpSUjGKq-RMonZa42GLcZOBaU5KCIujHHyuHsZoCSFBkwY=
+ux7FWg_afvbzZb26tc-5uk8NyubQKZs9jWUuuowlxUlohzGTeQYvqBJEDHtoxhF3mpJUnrAQDhH=
+6RadAeXRimMs=3D" target=3D"_blank" style=3D"text-decoration: none; outline:=
+ none; color: #000001" data-link-id=3D"35a4fd20a3c611ecb9c0275e4025097c"><i=
+mg src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=
+=3D61db3abb-5906-44c8-a258-8ab3de689535" width=3D"32" alt=3D"LinkedIn" bord=
+er=3D"0" style=3D"display: block; margin: 0; padding: 0;"></a></td>
+                                        <td align=3D"left" valign=3D"middl=
+e" style=3D"padding: 0px 10px 0px 0px" data-groupid=3D"twitter_logo"><a dat=
+a-managed-link=3D"twitter_logo_link_url" href=3D"https://email=2Emckinsey=
+=2Ecom/T/v700000185a8621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bce=
+a/04673f2e-deef-48f5-9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPH=
+b7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXc=
+PxvDgUUCCPvXMWoX_1P8SSwvgaM7Bj1wKVct32A076AqyU2wgVXHYwfm4TdSLSEWejcKq6kHvQB=
+Zg1oZwFdJTh0zTarcVFzT38OD6IKcCFFywzWrRdF1pdRXu1r-MKbJdKUIgZlN1CtV9YEhLScsvo=
+UygyAIiPpA3PFVh6GJ9skikm8B-Ws4DziwA7Kf5vwPpSu9cbZBUqBhScnf4Yj2zigE9IrUgnRuu=
+L6KA1ZXWjMlZkFolWOoNAS2v6KtpOUpK9o_50Mz2icI6-dFJfwu8gc94hehNhev9ZSflQsfVKhx=
+vJw-H58FOIMYZHF2vL6dcRGdoWNeilNq_MT7lLzqjF-gQx47ujONbqmCmXvLLh2mo6cefqUQubC=
+0L7_yrfZh1ObGS_JXEV64ENWGl8PlNwg64W0m5hbNyg0TgXyDv3eMfjt0CN4ExT7Xm-f7Q=3D=
+=3D" target=3D"_blank" style=3D"text-decoration: none; outline: none; color=
+: #000001" data-link-id=3D"5b540d90a3c611ecb9c0275e4025097c"><img src=3D"ht=
+tp://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=3D635dc295-1=
+b62-47cc-b9ae-f84b32d8f240" width=3D"32" alt=3D"Facebook" border=3D"0" styl=
+e=3D"display: block; margin: 0; padding: 0;"></a></td>
+                                        <td align=3D"left" valign=3D"middl=
+e" style=3D"padding: 0px" data-groupid=3D"fb_logo"><a data-managed-link=3D"=
+fb_logo_link_url" href=3D"https://email=2Emckinsey=2Ecom/T/v700000185a8621d=
+0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bceb/04673f2e-deef-48f5-9fea=
+-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30H=
+NSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZA=
+BQF9OJQbzKjWJqjvxdDSaKpQaqlnZTQePXDwUuaPA1sO81hQUJ9fzX6MooXs6Df0Ut2Glkzhk1D=
+Yep-g4SyQDeJNO3QPPeSecuovDuGUz0nZiUUvNgn6xOc_zjkmcrauu37UKeQnoPXiw6tWBXA-xa=
+2h0EaGruynRIdVe3CFyYa7iwMvDlN5XAecNgTlZFTuxD5z5vYDtmwaihIVnbV_K8gclf7ir-xmh=
+ONV4v7KNN97Wu2Cq1f0OW3yfuqdE63b_fTWhYXLi3ivp98ZFYrC1MCl1e0e2_dLD0KT6FRxQDKU=
+lIxiqvkTKJ2WuNhi3GTgWlOSgiLoxx8rh7GaAkhQZMGLsexVoP2n7282W9urXPubpPm6Db-Ckp4=
+7mSUNTXjYjUKwiIhW0ZIP0lC1Fp33GSqzMqwGLxn0GZiEWnQHl0YpjL" target=3D"_blank" =
+style=3D"text-decoration: none; outline: none; color: #000001" data-link-id=
+=3D"3b92c7d0a3c611ecb9c0275e4025097c"><img src=3D"http://images=2Eharmony=
+=2Eepsilon=2Ecom/ContentHandler/images?id=3D05b3d1f4-748b-4451-be05-2527eaf=
+a544d" width=3D"32" alt=3D"Facebook" border=3D"0" style=3D"display: block; =
+margin: 0; padding: 0;"> </a></td>
+                                      </tr>
+                                    </tbody></table></td>
+                                 =20
+                                </tr>
+                              </tbody></table>
+                             =20
+                              </th>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table>
+	=09
+		 =20
+      </div>
+    </section>
+    <!-- End MCK-008: Footer | Logo + Social Icons --> </td></tr></tbody><=
+/table></td></tr><tr><td><table role=3D"presentation" bgcolor=3D"#ffffff" w=
+idth=3D"640" border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"wrap"><tbody><tr><td bgcolor=3D"#FFFFFF"><!-- Start 1-001: Div=
+ider -->
+    <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" class=3D"wrap" bgcolor=3D"#FFFFFF" width=3D"100%">
+      <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"padding: 0px 20px 36p=
+x 20px" class=3D"pad20rl">
+          <table role=3D"presentation" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=3D"#000000">
+            <tbody><tr>
+              <td style=3D"line-height: 1px !important;" align=3D"center" =
+valign=3D"top"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Content=
+Handler/images?id=3D3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height=3D"1" styl=
+e=3D"display: block" border=3D"0" alt=3D""></td>
+            </tr>
+          </tbody></table></td>
+      </tr>
+    </tbody></table>
+  <!-- End 1-001: Divider --> </td></tr><tr><td bgcolor=3D"#FFFFFF"><secti=
+on id=3D"1010_p3" layout-row=3D"true">
+          <div layout-row=3D"true"><!-- start FULL WIDTH 1-010 -->
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"left" style=3D"padding: 0px 20px 16px 2=
+0px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height-r=
+ule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-s=
+pacing: 0px; text-transform: uppercase; color: #000000; font-family: Helvet=
+ica, Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p3=
+_text" data-groupid=3D"p3" class=3D"mobile_match"><strong><span style=3D"fo=
+nt-size: 12px; line-height: 150%;">Share these insights<br></span></strong>=
+</p></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+            <!-- end FULL WIDTH 1-010 --></div>
+        </section> </td></tr><tr><td bgcolor=3D"#FFFFFF"><!-- start FULL W=
+IDTH 1-008 -->
+        <section id=3D"1008_p1" layout-row=3D"true">
+          <div layout-row=3D"true">
+            <table layout-row=3D"true" role=3D"presentation" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"wrap" bgcolor=
+=3D"#FFFFFF">
+              <tbody><tr layout-row=3D"true">
+                <td align=3D"left" valign=3D"top"><table role=3D"presentat=
+ion" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrap">
+                    <tbody><tr>
+                      <td align=3D"left" style=3D"padding: 0px 20px 20px 2=
+0px" class=3D"pad20rl match"><p style=3D"font-size: 14px; mso-line-height-r=
+ule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-s=
+pacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, =
+Arial, sans-serif" enable-personalization=3D"true" data-richtext=3D"p1_text=
+" data-groupid=3D"p1" class=3D"mobile_match"><span style=3D"font-size: 16px=
+; line-height: 150%;"><strong>Did you enjoy this newsletter?</strong>&nbsp;=
+<a style=3D"color: #333333; text-decoration: none; font-weight: inherit;" h=
+ref=3D"https://email=2Emckinsey=2Ecom/T/v700000185a8621d0abd53bb6e96c660f0/=
+04673f2edeef48f50000021ef3a0bcec/04673f2e-deef-48f5-9fea-1bafba8f21e6?__dU_=
+_=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F_=
+_=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUU3uRJWe0exHskVzcjgROfBrpsT7E0m5ozFIlQn=
+2nxqLMEVPC_JVbk2_ql_VypiQ3LITEhpP91ssXBllApOD7Rs4shdGzlv8cRATjgPeDdpxH3D9ga=
+6t3ZOettKj33LMNpH3sjS717hF-so6WhWYZYjPCfKuTpGpbOBg9UhUJkNro9Rz-AQWcRgxaD4ZW=
+xDYk-DrYerrOkjMLJmSNPv77rosgm6SiKb7epM5uQd5WXo8bm1qR4WIXRygRWZYCoLe5MLta4sq=
+mmE6TaOuRz2kh2DJnX4x1VjOTt9ZXrfayjovgv5j6TJf9yDj0_qZBHXNeil_H1goPOlnsHZ_qcp=
+VieInbaNO9r2MmITB2XFLHsLtpe2A4H2oHEHjssma22wJskWXqY27_-xc8GJeg042ZcwJpZfQ0u=
+ayReTQee4smNTev369yWVNGsUbtLvc3W_66HMjGFvj4IbZIfkTNPImWeDukY7mMuz_Vahd1aeAE=
+9GjTMnGR4pYEwiu15zN3HkAswAShlBEJcc7xOwBj3J-3fRdQHGyO2N79Hm_19x_vCYiFJUe6SXK=
+HtS8CZMzC2yHhtwu2E8R08afZe0e2_dLD0KT6FRxQDKUlIxiqvkTKJ2WuNhi3GTgWlOSgiLoxx8=
+rh7GaAkhQZMGLsexVoP2n7282W9urXPubpPz_IDVBrrcAOotmsbWvSNZ6CzPMUYG07_HzlgX7Yd=
+6XYqwGLxn0GZiEWnQHl0YpjL" target=3D"_blank" rel=3D"noopener" data-link-id=
+=3D"7712a811a3cc11ecacd1af24434af4e3"><span style=3D"text-decoration: under=
+line; line-height: 150%;"><span style=3D"color: #2251ff; text-decoration: u=
+nderline; line-height: 150%;">Forward it to colleagues and friends</span></=
+span></a> so they can subscribe too=2E Was this issue forwarded to you? Sig=
+n up for it and sample our 40+ other free email subscriptions <a style=3D"c=
+olor: #333333; text-decoration: none; font-weight: inherit;" href=3D"https:=
+//email=2Emckinsey=2Ecom/register?__hScId__=3Dv700000185a8621d0abd53bb6e96c=
+660f0&__hRlId__=3D04673f2edeef48f50000021ef3a0bced&__hDId__=3D04673f2e-deef=
+-48f5-9fea-1bafba8f21e6&__hSD__=3DbWNraW5zZXkuY29t&cid=3Dother-eml-dre-mip-=
+mck&hlkid=3Db62131de593a412dacc32e6b3f5da7b4&hctky=3D13552232&hdpid=3D04673=
+f2e-deef-48f5-9fea-1bafba8f21e6" target=3D"_blank" rel=3D"noopener" data-li=
+nk-id=3D"7712cf20a3cc11ecacd1af24434af4e3"><span style=3D"text-decoration: =
+underline; line-height: 150%;"><span style=3D"color: #2251ff; text-decorati=
+on: underline; line-height: 150%;">here</span></span></a>=2E</span></p></td=
+>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- end FULL WIDTH 1-008 --> </td></tr></tbody></table></td></tr>=
+<tr><td align=3D"center" style=3D"font-size:14px"><!-- Start Footer - Digit=
+al -->
+<table role=3D"presentation" width=3D"100%" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0">
+  <tr>
+    <td bgcolor=3D"#F0F0F0"><table role=3D"presentation" class=3D"wrap" wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+        <tbody>
+          <tr>
+            <td style=3D"padding: 26px 20px 10px 20px" class=3D"pad20rl" a=
+lign=3D"left"><p style=3D"font-size: 12px; mso-line-height-rule: exactly; l=
+ine-height: 130%; margin: 0px; font-weight: normal; color: #757575; font-fa=
+mily: Helvetica, Arial, sans-serif">This email contains information about M=
+cKinsey's research, insights, services, or events=2E By opening our emails =
+or clicking on links, you agree to our use of cookies and web tracking tech=
+nology=2E For more information on how we use and protect your information, =
+please review our <a style=3D"color: #757575; text-decoration: underline; f=
+ont-weight: inherit;" href=3D"https://email=2Emckinsey=2Ecom/T/v700000185a8=
+621d0abd53bb6e96c660f0/04673f2edeef48f50000021ef3a0bcee/04673f2e-deef-48f5-=
+9fea-1bafba8f21e6?__dU__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0=
+E30HNSquNCCrd1XNAz&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZ=
+LAZABQFzGdi2cn1iU7KJEa5whIrwZcgBGG0TPafzZjdsyV3hB6TsAY9yft30XUBxsjtje_R5v9f=
+cf7wmIhSVHuklyh7UvAmTMwtsh4bcLthPEdPGn2jF6qVlFViVntibuEzdp5YPWQbguv_OQqky53=
+gvHIh-fkqnE2ewk2h_kOGinofIUz_A7vSZuJxFo-ixUnMnmNgAXoOJJFD7Ndq-9rLRlop-xbtnx=
+3z5-hj78etwjf7sQ6LUZN38uLEWEs7TXTkO9sACdLdz3DmlKKbzTBcvp7HARZ4TKllzSRroKDav=
+BtCdOtvJz1YIXf_nX-6Y6yPU1q9ae8xt83RO7Qwyn6RQNUYiregRLMYZi6Pz6FRxQDKUlIUIMiw=
+QfucR1E_P3PhB-2sjsIkr_aBtHqPqcna2myShgYf5bYCoBOp2-R_X-3D-F-TuYnTC-1zsA=3D" =
+target=3D"_blank">privacy&nbsp;policy</a>=2E</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+  <tr>
+    <td bgcolor=3D"#F0F0F0"><table role=3D"presentation" class=3D"wrap" wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+        <tbody>
+          <tr>
+            <td style=3D"padding: 0px 20px 10px 20px" class=3D"pad20rl" al=
+ign=3D"left"><p style=3D"font-size: 12px; mso-line-height-rule: exactly; li=
+ne-height: 130%; margin: 0px; font-weight: normal; color: #757575; font-fam=
+ily: Helvetica, Arial, sans-serif">You received this email because you subs=
+cribed to our Digital alert list=2E</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+  <tr>
+    <td bgcolor=3D"#F0F0F0"><table role=3D"presentation" class=3D"wrap" wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+        <tbody>
+          <tr>
+            <td style=3D"padding: 0px 20px 10px 20px" class=3D"pad20rl" al=
+ign=3D"left"><p style=3D"font-size: 12px; mso-line-height-rule: exactly; li=
+ne-height: 130%; margin: 0px; font-weight: normal; font-family: Helvetica, =
+Arial, sans-serif"><a style=3D"color: #757575; text-decoration: underline;"=
+ href=3D"https://email=2Emckinsey=2Ecom/T/v700000185a8621d0abd53bb6e96c660f=
+0/04673f2edeef48f50000021ef3a0bcef/04673f2e-deef-48f5-9fea-1bafba8f21e6?__d=
+U__=3Dv0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__=
+F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQFzGdi2cn1iU7KJE=
+a5whIrwaATePgETgXaYi6J2tbCGBqYj85pz5zjmhkbOWsZI5uGBjag9BBVASHwWYkm-P8fn4jbQ=
+xN9px-c7SEWejcKq6kHvQBZg1oZwFdJTh0zTarcVFzT38OD6IKcCFFywzWrRdF1pdRXu1r-MKbJ=
+dKUIgZlN1CtV9YEhLScsvoUygyAIiPpA3PFVh6GefGPrsVDwB8FP3cZxOjCy3WESYcHnYKrWoed=
+sGOB53ZWAX5PGurhAwnRuuL6KA1ZXWjMlZkFolWOoNAS2v6KtpOUpK9o_50Mz2icI6-dFJfwu8g=
+c94hehNhev9ZSflQsfVKhxvJw-H58FOIMYZHF2vL6dcRGdoWNeilNq_MT7lLzqjF-gQx47ujONb=
+qmCmXvLLh2mo6cefqUQubC0L7_ynnN8E3-ECKFmtacIjQOPIFhEq9EgXlJqjQOv5DSO4v5im9wh=
+Um0ZFN4ExT7Xm-f7Q=3D=3D" target=3D"_blank" rel=3D"noopener">Manage subscrip=
+tions</a> | <a style=3D"color: #757575; text-decoration: underline;" href=
+=3D"https://email=2Emckinsey=2Ecom/U/v700000185a8621d0abd53bb6e96c660f0/046=
+73f2edeef48f50000021ef3a0bcf0" target=3D"_blank" rel=3D"noopener">Unsubscri=
+be</a></p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+  <tr>
+    <td bgcolor=3D"#F0F0F0"><table role=3D"presentation" class=3D"wrap" wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+        <tbody>
+          <tr>
+            <td style=3D"padding: 0px 20px 26px 20px" class=3D"pad20rl" al=
+ign=3D"left"><p style=3D"font-size: 12px; mso-line-height-rule: exactly; li=
+ne-height: 130%; margin: 0px; font-weight: normal; color: #757575; font-fam=
+ily: Helvetica, Arial, sans-serif">Copyright =C2=A9&nbsp;2023 | McKinsey&nb=
+sp;&amp;&nbsp;Company, 3&nbsp;World&nbsp;Trade&nbsp;Center, 175&nbsp;Greenw=
+ich&nbsp;Street, New&nbsp;York, NY 10007</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+</table>
+<!-- End Footer - Digital --></td></tr></tbody></table>
+
+							<!--END Email Size Wrapper Table -->
+
+                        </td>
+                    </tr>
+                </table>
+
+                <!--END Email Background Color Table -->
+
+            </td>
+        </tr>
+	</table>
+    </div>
+	<!--END Page Overflow Color Table -->
+
+   =20
+</body>
+</html>
+---=Part.873fb2e.f59f2a83dcc6690d.185a862225d.53bf02d66c2891c9=---
+

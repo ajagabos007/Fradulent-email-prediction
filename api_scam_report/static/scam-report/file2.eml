@@ -1,0 +1,673 @@
+Delivered-To: dealrebels@gmail.com
+Received: by 2002:a05:7022:658c:b0:48:2460:a57b with SMTP id bd12csp171762dlb;
+        Thu, 12 Jan 2023 23:33:54 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvRScnk2Xdvk6mYA+GlZ1qt6FEvMeEVmO60Oh7r9dzmtITVC8evizzRfzFg1lqI3USjhEBx
+X-Received: by 2002:a05:6a20:8417:b0:b6:a422:ed83 with SMTP id c23-20020a056a20841700b000b6a422ed83mr2548176pzd.54.1673595234241;
+        Thu, 12 Jan 2023 23:33:54 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673595234; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RrjauXA3nKQr7IfP9XPdJGbkP3p8sjr7teWahKYstuGNs4eVqhs9rbChTPbbtcQ2Tw
+         SMuDnjXOtNasRRB+IFAj2+bjjnaZ/5KEjlWxUBYRWERl5DdzjjJxfdLC8LxivRb8h6l0
+         glmMsXPe4XuKuGdmi+fFF34J8rYWobSdRszDra9r5LEzY10BklDh9Iea6hmmJxiiqdT0
+         PXADXf2v3o0B6KaCTNJjrDCcFIV5aCwAH5co8v1IgvaVDhAsWaBUtxKA/3X1kt5bWvUy
+         UQXEaoko79zIdKzlOJ2iLXtS4gd7t2j1LQsYzwzvoA9fcC/xhAmWizN/QLaSHh2mlTjY
+         qe9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to
+         :reply-to:from:date:feedback-id;
+        bh=mSW/k2JvX/go8fatcnnKfqb+njgfJC2fs+n+kxQbH8Y=;
+        b=PcXZqQ32j+ikZsnXwjYZOgMRWDDfXOElpbGOPcTjHEsF5j+v32zaDZGLUdrgm9lbB/
+         jNaWSREHDFRJRBSjAeQS+eOFDuMvmfRXKMkPasBO1koTNpO/X/lGa0nFEU5/HR9cGxsd
+         mhTMlgBLgg7omyw8HCkHqVgGrp3Y/nl3Uur9aFgAmLUr74X72UcVCDVP9PCxIopAJq6v
+         N7FWm7JLR/g+l8iE3gQ+0Btg1Nfkx0BmzgvS6ZtHrRXDGmPi/6qU2rptAr8sRq8GImTC
+         z0Z2XXwtozQ7utC3y63Byq/n+8vvtkAObMEmKK5xCtxdaZUFWpzRyl2ls5edCZ1E2+uN
+         Puyw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of vip@vip.iboyna.com designates 47.90.196.23 as permitted sender) smtp.mailfrom=vip@vip.iboyna.com
+Return-Path: <vip@vip.iboyna.com>
+Received: from out196-23.us.a.dm.aliyun.com (out196-23.us.a.dm.aliyun.com. [47.90.196.23])
+        by mx.google.com with ESMTPS id 129-20020a630787000000b004b45781ea50si12450288pgh.813.2023.01.12.23.33.51
+        for <dealrebels@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 12 Jan 2023 23:33:54 -0800 (PST)
+Received-SPF: pass (google.com: domain of vip@vip.iboyna.com designates 47.90.196.23 as permitted sender) client-ip=47.90.196.23;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of vip@vip.iboyna.com designates 47.90.196.23 as permitted sender) smtp.mailfrom=vip@vip.iboyna.com
+X-AliDM-RcptTo: ZGVhbHJlYmVsc0BnbWFpbC5jb20=
+Feedback-ID: default:vip@vip.iboyna.com:batch:260076
+X-EnvId: 600000010347777947
+Received: from larissa033063030050.center.na620(mailfrom:vip@vip.iboyna.com fp:SMTPD_-VHcBGO-cx-)
+          by smtpdm.aliyun.com(127.0.0.1);
+          Fri, 13 Jan 2023 15:33:47 +0800
+Date: Fri, 13 Jan 2023 15:33:47 +0800 (CST)
+From: Penley <vip@vip.iboyna.com>
+Reply-To: Penley <sales02@iboyna.com>
+To: dealrebels@gmail.com
+Message-ID: <292042888.78761.1673595227193@larissa033063030050.center.na620>
+Subject: Weekly deal discounts on select products
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html tabid=3D"138">
+ <head>=20
+  <meta charset=3D"utf-8" />=20
+  <title>=E9=82=AE=E4=BB=B6</title>=20
+ </head>=20
+ <body style=3D"">=20
+  <div id=3D"app" style=3D"background-color: #f2f3f7">=20
+   <div data-reactroot=3D"" class=3D"edm-component">=20
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"widt=
+h: 100%;">=20
+     <tbody>=20
+      <tr>=20
+       <td align=3D"center" style=3D"padding-top: 0px; padding-bottom: 0px;=
+ ">=20
+        <table cellpadding=3D"0" cellspacing=3D"0" width=3D"640" align=3D"c=
+enter" style=3D"width: 640px;">=20
+         <tbody>=20
+          <tr>=20
+           <td style=3D"width: 640px;">=20
+            <!-- react-empty: 23 -->=20
+            <!-- react-empty: 24 -->=20
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" border=
+=3D"0" style=3D"border-collapse: separate;height: 68px; width: 600px; paddi=
+ng-top: 0px; padding-bottom: 0px;">=20
+             <tbody>=20
+              <tr style=3D"height: 68px;">=20
+               <td width=3D"60" style=3D"width: 60px;"> <a href=3D"https://=
+alicrm.alibaba.com/outer/email/setClickStatus.html?url=3Dhttps%3A%2F%2Fbaoy=
+ilai.en.alibaba.com%3Fspm%3Da278r.12986543.email_alias_206451582.EMAIL_alia=
+s_209099698%26supplierId%3D83ad7672733c7d40373d91d216b03ce0%26contactId%3D9=
+f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcrm_alicrm%26tenantId%3Db7e0450=
+489f07a35e099de843b319904541929d970e5563f4a9a56ec388a4875%26customerId%3D7b=
+4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tracelog_template%3D2002010499%26c=
+rm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3Dbb1573b5aa4cab24f66a54be8783=
+7621%26from%3D%26to%3D&type=3Dorigin" style=3D"display: inline-block;border=
+-radius: 50%;width: 42px;height: 42px;line-height: 42px;overflow: hidden;" =
+target=3D"_blank"> <img width=3D"42" src=3D"https://sc04.alicdn.com/kf/HTB1=
+kY9iLXXXXXblXXXXq6xXFXXXM.jpg" style=3D"vertical-align: middle;" /> </a> </=
+td>=20
+               <td><span style=3D"font-family: Roboto, =E5=BE=AE=E8=BD=AF=
+=E9=9B=85=E9=BB=91, Arial; font-size: 14px; line-height: 24px; margin: 0px;=
+"> <a href=3D"https://alicrm.alibaba.com/outer/email/setClickStatus.html?ur=
+l=3Dhttps%3A%2F%2Fbaoyilai.en.alibaba.com%3Fspm%3Da278r.12986543.email_alia=
+s_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40373d91d216=
+b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcrm_alicr=
+m%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a56ec388a=
+4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tracelog_tem=
+plate%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3Dbb1573=
+b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=3D"_blan=
+k" style=3D"text-decoration: none;color: #666666; font-family: Roboto, =E5=
+=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 14px; line-height: 24p=
+x; margin: 0px;">Shenzhen Boyna Technology Co.,ltd.</a> </span></td>=20
+              </tr>=20
+              <tr>=20
+              </tr>=20
+             </tbody>=20
+            </table> </td>=20
+          </tr>=20
+         </tbody>=20
+        </table> </td>=20
+      </tr>=20
+     </tbody>=20
+    </table>=20
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"widt=
+h: 100%;">=20
+     <tbody>=20
+      <tr>=20
+       <td align=3D"center" style=3D"padding-top: 0px; padding-bottom: 0px;=
+ ">=20
+        <table cellpadding=3D"0" cellspacing=3D"0" width=3D"640" align=3D"c=
+enter">=20
+         <tbody style=3D"height: 180px;">=20
+          <tr style=3D"height: 180px;">=20
+           <td style=3D"height: 180px;background-color: #fff;"> <img src=3D=
+"https://img.alicdn.com/tfs/TB1SGv5b7L0gK0jSZFAXXcA9pXa-1280-360.jpg" width=
+=3D"640" /> </td>=20
+          </tr>=20
+         </tbody>=20
+        </table> </td>=20
+      </tr>=20
+     </tbody>=20
+    </table>=20
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"widt=
+h: 100%;">=20
+     <tbody>=20
+      <tr>=20
+       <td align=3D"center" style=3D"padding-top: 0px; padding-bottom: 0px;=
+ ">=20
+        <table cellpadding=3D"0" cellspacing=3D"0" width=3D"640" align=3D"c=
+enter" style=3D"width: 640px;">=20
+         <tbody>=20
+          <tr>=20
+           <td style=3D"width: 640px; padding: 20px; background-color: rgb(=
+255, 255, 255);">=20
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" border=
+=3D"0" style=3D"border-collapse: separate; width: 600px;">=20
+             <tbody>=20
+              <tr>=20
+               <td><span style=3D"color: rgb(51, 51, 51); font-family: Robo=
+to, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-heig=
+ht: 24px; margin: 0px;"> We wanted you to know that Shenzhen Boyna Technolo=
+gy Co.,ltd. has products featured in Alibaba.com's Weekly Deals! Discounts =
+are available for a limited time, so please order soon. </span> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table> </td>=20
+          </tr>=20
+         </tbody>=20
+        </table> </td>=20
+      </tr>=20
+     </tbody>=20
+    </table>=20
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"widt=
+h: 100%;">=20
+     <tbody>=20
+      <tr>=20
+       <td align=3D"center" style=3D"padding-top: 0px; padding-bottom: 0px;=
+ ">=20
+        <table cellpadding=3D"0" cellspacing=3D"0" width=3D"640" align=3D"c=
+enter" style=3D"width: 640px;">=20
+         <tbody>=20
+          <tr>=20
+           <td style=3D"width: 640px; padding: 20px; background-color: rgb(=
+255, 255, 255);">=20
+            <!-- react-empty: 59 -->=20
+            <!-- react-empty: 60 -->=20
+            <!-- react-empty: 61 -->=20
+            <!-- OFFER: 61 -->=20
+            <!-- order -->=20
+            <!--$foreach.count-->=20
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" border=
+=3D"0" style=3D"border-collapse: separate; width: 600px; margin-bottom: 8px=
+;">=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FRenol=
+ink-V1-99-OBD2-Diagnostic-Cable_62452061145.html%3Fspm%3Da278r.12986543.ema=
+il_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40373=
+d91d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcr=
+m_alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a5=
+6ec388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_trace=
+log_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3=
+Dbb1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=
+=3D"_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/H5f3e3cf3ce9043d4bf8=
+4f617f468beb2O.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width=
+: 130px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $27.50 - $35.00 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!-- order -->=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FOpenp=
+ort-2-0-ECUFLASH-ECU-Programmer_62451996361.html%3Fspm%3Da278r.12986543.ema=
+il_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40373=
+d91d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcr=
+m_alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a5=
+6ec388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_trace=
+log_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3=
+Dbb1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=
+=3D"_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/H98e4835c9a6145bf8b9=
+212d44cfa559cV.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width=
+: 130px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $17.88 - $22.82 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!-- order -->=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FIprog=
+-Iprog-Pro-Programmer-Support-IMMO_62448943256.html%3Fspm%3Da278r.12986543.=
+email_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40=
+373d91d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3=
+Dcrm_alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a=
+9a56ec388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tr=
+acelog_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailI=
+d%3Dbb1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" targe=
+t=3D"_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/H8d50a3891cec41929d=
+2c5b828d10aa51J.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; widt=
+h: 130px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $41.25 - $54.79 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!--$foreach.count--end-->=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <!-- order -->=20
+            <!--$foreach.count-->=20
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" border=
+=3D"0" style=3D"border-collapse: separate; width: 600px; margin-bottom: 8px=
+;">=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FHigh-=
+Quality-Diagnostic-Tool-Compatible-Brush_62361086887.html%3Fspm%3Da278r.129=
+86543.email_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad767273=
+3c7d40373d91d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26biz=
+Code%3Dcrm_alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5=
+563f4a9a56ec388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_=
+mtn_tracelog_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26=
+emailId%3Dbb1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin"=
+ target=3D"_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/Ha4b0e2309fa9=
+4f76994523301ea3225dL.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px=
+; width: 130px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $3.28 - $4.68 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!-- order -->=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FMulti=
+diag-Pro-Plus-wireless-connection-OBD2_62173927955.html%3Fspm%3Da278r.12986=
+543.email_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c=
+7d40373d91d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCo=
+de%3Dcrm_alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e556=
+3f4a9a56ec388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mt=
+n_tracelog_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26em=
+ailId%3Dbb1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" t=
+arget=3D"_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/HTB1dFI5dwaH3KV=
+jSZFjq6AFWpXaE.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width=
+: 130px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $34.55 - $46.90 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!-- order -->=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FHot-S=
+ale-OBD2-ELM327-Wireless-WIFI_62275258152.html%3Fspm%3Da278r.12986543.email=
+_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40373d9=
+1d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcrm_=
+alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a56e=
+c388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tracelo=
+g_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3Db=
+b1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=3D"=
+_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/H36a38782c14e4cc1b54a4ca=
+577e34c1fD.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width: 13=
+0px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $4.47 - $4.95 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!--$foreach.count--end-->=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <!-- order -->=20
+            <!--$foreach.count-->=20
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" border=
+=3D"0" style=3D"border-collapse: separate; width: 600px; margin-bottom: 8px=
+;">=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FTPMS-=
+EL-50448-OEC-T5-For_1600228581931.html%3Fspm%3Da278r.12986543.email_alias_2=
+06451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40373d91d216b03=
+ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcrm_alicrm%2=
+6tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a56ec388a487=
+5%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tracelog_templa=
+te%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3Dbb1573b5a=
+a4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=3D"_blank">=
+ <img src=3D"https://s.alicdn.com/@sc04/kf/H071c3efb4805421ea91ab9fdce2a0ac=
+8j.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width: 130px;" />=
+ </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $2.50 - $3.24 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!-- order -->=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FDoubl=
+e-V3-0-Green-Board-VD_62308342070.html%3Fspm%3Da278r.12986543.email_alias_2=
+06451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d40373d91d216b03=
+ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3Dcrm_alicrm%2=
+6tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a56ec388a487=
+5%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tracelog_templa=
+te%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId%3Dbb1573b5a=
+a4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=3D"_blank">=
+ <img src=3D"https://s.alicdn.com/@sc04/kf/H77c75a28da2f4ac398c78aeafde4065=
+8R.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width: 130px;" />=
+ </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $34.50 - $39.66 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!-- order -->=20
+               <td style=3D"text-align: center;width: 33.3%;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"190" bo=
+rder=3D"0" style=3D"border-collapse: separate; border: 1px solid rgb(220, 2=
+22, 227); height: 224px; width: 190px;">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td height=3D"140" style=3D"height: 140px; text-align: c=
+enter;position: relative;"> <a href=3D"https://alicrm.alibaba.com/outer/ema=
+il/setClickStatus.html?url=3D%2F%2Fwww.alibaba.com%2Fproduct-detail%2FCar-D=
+iagnostic-Tool-Vgate-vLinker-FS_1600319151175.html%3Fspm%3Da278r.12986543.e=
+mail_alias_206451582.EMAIL_alias_209099698%26supplierId%3D83ad7672733c7d403=
+73d91d216b03ce0%26contactId%3D9f47bdbfc608f0793ced2c0544874671%26bizCode%3D=
+crm_alicrm%26tenantId%3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9=
+a56ec388a4875%26customerId%3D7b4c300a2c6833cb7232384c792e3a7a%26crm_mtn_tra=
+celog_template%3D2002010499%26crm_mtn_tracelog_from_sys%3Dlarissa%26emailId=
+%3Dbb1573b5aa4cab24f66a54be87837621%26from%3D%26to%3D&type=3Dorigin" target=
+=3D"_blank"> <img src=3D"https://s.alicdn.com/@sc04/kf/Hf4b053199a3b4355bd5=
+a93003fd7c1128.jpg_300x300.jpg" width=3D"130" style=3D"height: 130px; width=
+: 130px;" /> </a> </td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"20" style=3D"height: 20px;padding-left: 15=
+px;text-align: left;"> <span style=3D"color: rgb(51, 51, 51); font-family: =
+Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line-=
+height: 24px; margin: 0px;"> $27.20 - $36.20 </span></td>=20
+                  </tr>=20
+                  <tr>=20
+                   <td height=3D"30" style=3D"height: 30px;padding-left: 15=
+px;text-align: left;">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ style=3D"border-collapse: separate;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td width=3D"120" align=3D"top" style=3D"width: 120p=
+x;"> </td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+               <!--$foreach.count--end-->=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" borde=
+r=3D"0">=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"height: 19px; line-height: 19px; font-size: 1px=
+;">=C2=A0</td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"border-collapse: separate;">=20
+             <tbody>=20
+              <tr>=20
+               <td width=3D"190" style=3D"width: 190px;"></td>=20
+               <td style=3D"text-align: center;">=20
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" b=
+order=3D"0">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td align=3D"center">=20
+                    <table cellpadding=3D"0" cellspacing=3D"0" align=3D"cen=
+ter" border=3D"0" style=3D"border-collapse: separate; background-color: rgb=
+(255, 106, 0); border-radius: 5px;">=20
+                     <tbody>=20
+                      <tr>=20
+                       <td><a target=3D"_blank" href=3D"https://alicrm.alib=
+aba.com/outer/email/setClickStatus.html?url=3Dhttps%3A%2F%2Fbaoyilai.en.ali=
+baba.com%3Fspm%3Da278r.12986543.email_alias_206451582.EMAIL_alias_209099698=
+%26supplierId%3D83ad7672733c7d40373d91d216b03ce0%26contactId%3D9f47bdbfc608=
+f0793ced2c0544874671%26bizCode%3Dcrm_alicrm%26tenantId%3Db7e0450489f07a35e0=
+99de843b319904541929d970e5563f4a9a56ec388a4875%26customerId%3D7b4c300a2c683=
+3cb7232384c792e3a7a%26crm_mtn_tracelog_template%3D2002010499%26crm_mtn_trac=
+elog_from_sys%3Dlarissa%26emailId%3Dbb1573b5aa4cab24f66a54be87837621%26from=
+%3D%26to%3D&type=3Dorigin" style=3D"color: rgb(255, 255, 255); font-family:=
+ Roboto, =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91, Arial; font-size: 16px; line=
+-height: 40px; display: block; text-decoration: none; height: 40px; padding=
+-left: 19px; padding-right: 19px; background-color: rgb(255, 106, 0); borde=
+r-radius: 5px; vertical-align: middle; width: 190px; text-align: center;">S=
+ee all our products</a></td>=20
+                      </tr>=20
+                     </tbody>=20
+                    </table> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table> </td>=20
+          </tr>=20
+         </tbody>=20
+        </table> </td>=20
+      </tr>=20
+      <tr>=20
+       <td style=3D"text-align: center;padding: 10px 40px;color: #999999;">=
+ You received this email because you subscribed this supplier on ecommerce =
+site or exchange your email address via other channel. <br />If you no long=
+er want to receive news from this supplier, please <a href=3D"https://alicr=
+m.alibaba.com/outer/email/unsubscribe.html?spm=3Da278r.12986543.email_alias=
+_206451582.EMAIL_alias_209099698&supplierId=3D83ad7672733c7d40373d91d216b03=
+ce0&contactId=3D9f47bdbfc608f0793ced2c0544874671&bizCode=3Dcrm_alicrm&tenan=
+tId=3Db7e0450489f07a35e099de843b319904541929d970e5563f4a9a56ec388a4875&cust=
+omerId=3D7b4c300a2c6833cb7232384c792e3a7a&crm_mtn_tracelog_template=3D20020=
+10499&crm_mtn_tracelog_from_sys=3Dlarissa&emailId=3Dbb1573b5aa4cab24f66a54b=
+e87837621&from=3D&to=3D" target=3D"_blank">click here</a> </td>=20
+      </tr>=20
+     </tbody>=20
+    </table>=20
+   </div>=20
+  </div> =20
+  <img style=3D"display:none; visibility:hidden; color:#fff;" width=3D"0" h=
+eight=3D"0" src=3D"https://alicrm.alibaba.com/outer/email/setReadStatus.htm=
+l?spm=3Da278r.12986543.email_alias_206451582.EMAIL_alias_209099698&supplier=
+Id=3D83ad7672733c7d40373d91d216b03ce0&contactId=3D9f47bdbfc608f0793ced2c054=
+4874671&bizCode=3Dcrm_alicrm&tenantId=3Db7e0450489f07a35e099de843b319904541=
+929d970e5563f4a9a56ec388a4875&customerId=3D7b4c300a2c6833cb7232384c792e3a7a=
+&crm_mtn_tracelog_template=3D2002010499&crm_mtn_tracelog_from_sys=3Dlarissa=
+&emailId=3Dbb1573b5aa4cab24f66a54be87837621&from=3D&to=3D" />
+  <img style=3D"display:none; visibility:hidden; color:#fff;" width=3D"0" h=
+eight=3D"0" src=3D"http://stat.alibaba.com/mail_callback.html?crm_mtn_trace=
+log_log_id=3Dnull&crm_mtn_tracelog_task_id=3Dnull" />
+  <img style=3D"display:none; visibility:hidden; color:#fff;" width=3D"0" h=
+eight=3D"0" src=3D"http://gm.mmstat.com/btob.10?crm_mtn_tracelog_log_id=3Dn=
+ull&crm_mtn_tracelog_task_id=3Dnull&from=3Dnull&to=3Dnull&from_sys=3Dlariss=
+a&biz_type=3Dnull&template=3D2002010499" />
+ </body>
+</html>
