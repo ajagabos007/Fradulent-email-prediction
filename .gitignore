@@ -1,3 +1,4 @@
 api_scam_report/db.sqlite3
 api_scam_report/*/__pycache__
 api_scam_report/*/migrations/__pycache__
+api_scam_report/scam_report/static/spam-emails/*
