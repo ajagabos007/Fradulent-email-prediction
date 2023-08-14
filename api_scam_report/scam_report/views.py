@@ -14,7 +14,7 @@ def upload_file(request):
             f = request.FILES['file']
             file_path = handle_uploaded_file(request.FILES['file'])
             data = load_email(file_path)
-            result = predict_spam(data)
+            result = predict_spam(result)
             # return JsonResponse({'data':file_path})
             return render(request, 'scam_report/upload.html', {'result': result, 'is_fraudulent':result[0], 'form': form})
     else:
